@@ -128,6 +128,9 @@
     <Compile Include="Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuPreparacion.xaml.cs">
+      <DependentUpon>MenuPreparacion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +150,24 @@
     <Content Include="Assets\Opciones\flecha.png" />
     <Content Include="Assets\Opciones\flechaDr.png" />
     <Content Include="Assets\Opciones\MenuOpciones.PNG" />
+    <Content Include="Assets\MenuPreparacion\action.png" />
+    <Content Include="Assets\MenuPreparacion\archer.png" />
+    <Content Include="Assets\MenuPreparacion\bg.png" />
+    <Content Include="Assets\MenuPreparacion\character_square.png" />
+    <Content Include="Assets\MenuPreparacion\dice_square.png" />
+    <Content Include="Assets\MenuPreparacion\knight.png" />
+    <Content Include="Assets\MenuPreparacion\lancer.png" />
+    <Content Include="Assets\MenuPreparacion\options.png" />
+    <Content Include="Assets\MenuPreparacion\poison.png" />
+    <Content Include="Assets\MenuPreparacion\priority.png" />
+    <Content Include="Assets\MenuPreparacion\ready.png" />
+    <Content Include="Assets\MenuPreparacion\reroll_icon.png" />
+    <Content Include="Assets\MenuPreparacion\sword.png" />
+    <Content Include="Assets\MenuPreparacion\throw.png" />
+    <Content Include="Assets\MenuPreparacion\throw_platform.png" />
+    <Content Include="Assets\MenuPreparacion\trap_icon.png" />
+    <Content Include="Assets\MenuPreparacion\white_square.png" />
+    <Content Include="Assets\white_square.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -173,12 +194,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuPreparacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.11</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
