@@ -20,6 +20,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <Image Source="/Assets/Opciones/fondoBatalla.png" Grid.RowSpan="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Stretch="Fill"/>
+
         <Image Source="/Assets/Opciones/MenuOpciones.PNG" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Stretch="Fill" />
 
         <Grid Grid.Row="1" Grid.Column="1">

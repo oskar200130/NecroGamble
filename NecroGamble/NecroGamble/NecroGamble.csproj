@@ -149,6 +149,7 @@
     <Content Include="Assets\Opciones\Captura.PNG" />
     <Content Include="Assets\Opciones\flecha.png" />
     <Content Include="Assets\Opciones\flechaDr.png" />
+    <Content Include="Assets\Opciones\fondoBatalla.png" />
     <Content Include="Assets\Opciones\MenuOpciones.PNG" />
     <Content Include="Assets\MenuPreparacion\action.png" />
     <Content Include="Assets\MenuPreparacion\archer.png" />

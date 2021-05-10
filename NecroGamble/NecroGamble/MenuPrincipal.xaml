@@ -38,7 +38,7 @@
         <Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/MainMenu/options.PNG" />
-                <TextBlock Text="Options" TextWrapping="WrapWholeWords" MaxHeight="20"  Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+                <TextBlock Text="   Options" TextWrapping="WrapWholeWords" MaxHeight="20"  Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
             </StackPanel>
 
         </Button>
@@ -46,7 +46,7 @@
         <Button Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Assets/MainMenu/exit.PNG" />
-                <TextBlock Text="Exit" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+                <TextBlock Text="    Exit" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
             </StackPanel>
 
         </Button>
