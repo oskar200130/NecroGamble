@@ -37,10 +37,30 @@
             </Grid.RowDefinitions>
             <Image x:Name="SideSpash" Source="/Assets/MenuPausa/sideSplash.png" HorizontalAlignment="Center" Stretch="Fill" Grid.Row="0" Grid.Column="0" />
             <RelativePanel Grid.Column="0" Grid.ColumnSpan="1">
-                <Button x:Name="Continue" Height="140" Width="444" Click="Continue_Click" Margin="100,150,0,0" Content="Continue" FontSize="70" FontWeight="Bold" Foreground="Black" Background="BlueViolet" />
-                <Button x:Name="SaveGame" Height="140" Width="444" Click="SaveGame_Click" Margin="150,350,0,0" Content="Save Game" FontSize="70" FontWeight="Bold" Foreground="Black" Background="BlueViolet" />
-                <Button x:Name="Options" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" Content="Options" FontSize="70" FontWeight="Bold" Foreground="Black" Background="BlueViolet" />
-                <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" Content="Exit" FontSize="70" FontWeight="Bold" Foreground="Black" Background="BlueViolet" />
+                <Button x:Name="Continue" Height="140" Width="444" Click="Continue_Click" Margin="100,150,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                    <StackPanel Orientation="Horizontal" Width="444">
+                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Continue" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="SaveGame" Height="140" Width="444" Click="SaveGame_Click" Margin="150,350,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                    <StackPanel Orientation="Horizontal" Width="444">
+                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Save Game" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Options" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                    <StackPanel Orientation="Horizontal" Width="444">
+                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Options" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                    <StackPanel Orientation="Horizontal" Width="444">
+                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Button>
             </RelativePanel>
         </Grid>
 
@@ -73,8 +93,10 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="0" Text="Are you sure?" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontStretch="Condensed"></TextBlock>
-                <Button x:Name="YesButton" Click="YesButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="auto" Margin="-50,0,0,0" Content="Yes" FontSize="45"></Button>
-                <Button x:Name="NoButton" Click="NoButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="auto" Margin="50,0,0,0" Content="No" FontSize="45" ></Button>
+                <Button x:Name="YesButton" Click="YesButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" 
+                        Width="auto" Margin="-50,0,0,0" Content="Yes" FontSize="45"></Button>
+                <Button x:Name="NoButton" Click="NoButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" 
+                        Width="auto" Margin="50,0,0,0" Content="No" FontSize="45" ></Button>
 
             </Grid>
             
