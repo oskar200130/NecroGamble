@@ -11,7 +11,7 @@
 
 
     <Grid Width="auto" Height="auto">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="142*" />
             <ColumnDefinition Width="373*"  />
@@ -28,6 +28,11 @@
         <Image Source="/Assets/MenuPreparacion/bg.png" Stretch="Fill" Grid.RowSpan="3"  Grid.ColumnSpan="5"/>
 
         <Image Source="/Assets/MenuPreparacion/dice_square.png" Stretch="Fill" Grid.Column="1" Grid.RowSpan="2" Margin="44,54,0,20" />
+
+        <!--<Image Source="/Assets/MenuPreparacion/3dice.png" Grid.Row="1" Height="50" Grid.ColumnSpan="2" Margin="234,284,129,284"/>
+        <Image Source="/Assets/MenuPreparacion/5dice.png" Grid.Column="1" Grid.Row="1"   Height="50" Grid.ColumnSpan="2" Margin="144,71,115,497"/>
+        <Image Source="/Assets/MenuPreparacion/6dice.png" Grid.Row="1" Grid.Column="1" Height="50" Grid.ColumnSpan="2" Margin="221,398,38,170"/>-->
+
         <Grid Grid.RowSpan="3" Grid.Column="0">
 
             <Grid.RowDefinitions>

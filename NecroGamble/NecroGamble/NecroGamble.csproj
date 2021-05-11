@@ -146,6 +146,9 @@
     <Content Include="Assets\MainMenu\options.PNG" />
     <Content Include="Assets\MainMenu\OptionsButtonPressed.PNG" />
     <Content Include="Assets\MainMenu\Titulo.png" />
+    <Content Include="Assets\MenuPreparacion\3dice.png" />
+    <Content Include="Assets\MenuPreparacion\5dice.png" />
+    <Content Include="Assets\MenuPreparacion\6dice.png" />
     <Content Include="Assets\Opciones\Captura.PNG" />
     <Content Include="Assets\Opciones\flecha.png" />
     <Content Include="Assets\Opciones\flechaDr.png" />
