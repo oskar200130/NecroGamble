@@ -20,10 +20,10 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Image x:Name="Background" Stretch="Fill" Height="auto" Width="auto" Source="/Assets/MenuPausa/fondoBatalla.png" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
+        <Image x:Name="Background" Stretch="Uniform" Height="auto" Width="auto" Source="/Assets/MenuPausa/fondoBatalla.png" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
         
-        <Button x:Name="ButtonPause" Click="ButtonPause_Click" Height="140" Width="144" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Image x:Name="PauseImage" Source="/Assets/MenuPausa/Pause.png" HorizontalAlignment="Center" Stretch="Fill"/>
+        <Button x:Name="ButtonPause" Click="ButtonPause_Click"  Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image x:Name="PauseImage" Source="/Assets/MenuPausa/Pause.png" HorizontalAlignment="Center" Stretch="Uniform"/>
         </Button>
         
         <Grid x:Name="PauseMenu" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3" Visibility="Collapsed">
