@@ -45,7 +45,7 @@
                 Width="100" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Image Source="/Assets/PartidaMenu/Pause.png" Stretch="UniformToFill"/>
             </Button>
-            <ProgressBar Grid.Column="1" Width="700" Height="20" Value="80" Foreground="Red" Background="White" CornerRadius="8"/>
+            <ProgressBar Grid.Column="1" Width="700" Height="20" Value="80" Foreground="Red" Background="White"/>
             <Image Source="/Assets/PartidaMenu/muerteVida.png" Grid.Column="1" Margin="67,-1,827,32"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1" Background="White" Opacity="0.8">
