@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="NecroGamble.MenuPrincipal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NecroGamble"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Assets/MainMenu/MainMenuBackground.jpg" Grid.RowSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Stretch="Fill"/>
+        <Image Source="/Assets/MainMenu/Titulo.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="1000" MaxHeight="300"/>
+
+        <Button Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/MainMenu/new.PNG" />
+                <TextBlock Text="NewGame" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+            </StackPanel>
+        </Button>
+
+
+        <Button Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/MainMenu/load.PNG" />
+                <TextBlock Text="LoadGame" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/MainMenu/options.PNG" />
+                <TextBlock Text="   Options" TextWrapping="WrapWholeWords" MaxHeight="20"  Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+            </StackPanel>
+
+        </Button>
+
+        <Button Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click" BorderThickness="2" MaxWidth="300" MaxHeight="75" Background="MediumPurple" BorderBrush="Purple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Assets/MainMenu/exit.PNG" />
+                <TextBlock Text="    Exit" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto"  HorizontalAlignment="Left" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+            </StackPanel>
+
+        </Button>
+
+    </Grid>
+</Page>
