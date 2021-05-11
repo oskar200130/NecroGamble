@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.Effects;
+using SendGrid.Helpers.Mail;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,11 +24,49 @@ namespace NecroGamble
     /// <summary>
     /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
+    /// 
+
+   
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
         }
+
+        private void ButtonPause_Click(object sender, RoutedEventArgs e)
+        {
+            PauseMenu.Visibility = Visibility.Visible;
+
+        }
+
+        private void Continue_Click(object sender, RoutedEventArgs e)
+        {
+            Continue.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
+            PauseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void SaveGame_Click(object sender, RoutedEventArgs e)
+        {
+            SaveGame.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
+            PauseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void Options_Click(object sender, RoutedEventArgs e)
+        {
+            Options.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
+            PauseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Exit.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
+            PauseMenu.Visibility = Visibility.Collapsed;
+        }
+
+      
     }
+
+
+
 }
