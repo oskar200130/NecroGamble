@@ -142,6 +142,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\MenuPausa\BlurOptiones.png" />
+    <Content Include="Assets\MenuPausa\fondoBatalla.png" />
+    <Content Include="Assets\MenuPausa\fondoBatallaBlur.png" />
+    <Content Include="Assets\MenuPausa\Pause.png" />
+    <Content Include="Assets\MenuPausa\sideSplash.png" />
     <Content Include="Assets\PartidaMenu\arquero.png" />
     <Content Include="Assets\PartidaMenu\backgroundPartida.jpg" />
     <Content Include="Assets\PartidaMenu\caballero.png" />
@@ -186,10 +191,6 @@
     <Content Include="Assets\MenuPreparacion\trap_icon.png" />
     <Content Include="Assets\MenuPreparacion\white_square.png" />
     <Content Include="Assets\white_square.png" />
-    <Content Include="Assets\fondoBatalla.png" />
-    <Content Include="Assets\fondoBatallaBlur.png" />
-    <Content Include="Assets\Pause.png" />
-    <Content Include="Assets\sideSplash.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
