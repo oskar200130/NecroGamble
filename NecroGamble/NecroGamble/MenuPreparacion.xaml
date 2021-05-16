@@ -29,9 +29,21 @@
 
         <Image Source="/Assets/MenuPreparacion/dice_square.png" Stretch="Fill" Grid.Column="1" Grid.RowSpan="2" Margin="44,54,0,20" />
 
-        <!--<Image Source="/Assets/MenuPreparacion/3dice.png" Grid.Row="1" Height="50" Grid.ColumnSpan="2" Margin="234,284,129,284"/>
-        <Image Source="/Assets/MenuPreparacion/5dice.png" Grid.Column="1" Grid.Row="1"   Height="50" Grid.ColumnSpan="2" Margin="144,71,115,497"/>
-        <Image Source="/Assets/MenuPreparacion/6dice.png" Grid.Row="1" Grid.Column="1" Height="50" Grid.ColumnSpan="2" Margin="221,398,38,170"/>-->
+        <Viewbox  Grid.Column="1"  Grid.Row="1">
+            <Grid Width="930">
+                <Image x:Name="dice1" Source="/Assets/MenuPreparacion/empty_dice.png" Width="50" Height="50" Margin="234,154,129,284"/>
+            </Grid>
+        </Viewbox>
+        <Viewbox  Grid.Column="1"  Grid.Row="1" >
+            <Grid Width="930">
+                <Image x:Name="dice2" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50" Width="50"  Margin="221,398,-261,170" />
+            </Grid>
+        </Viewbox>
+        <Viewbox  Grid.Column="1"  Grid.Row="1">
+            <Grid Width="930">
+                <Image x:Name="dice3" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50"  Width="50" Margin="293,398,573,170"/>
+            </Grid>
+        </Viewbox>
 
         <Grid Grid.RowSpan="3" Grid.Column="0">
 
@@ -50,16 +62,40 @@
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/archer.png" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="8,22,7,10" />
+                <Viewbox  Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Grid>
+                        <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png"  Grid.Row="1" Margin="57,17,10,33" />
-                <TextBlock x:Name="p1Priority" Foreground="Black" FontFamily="Aclonica" FontSize="40" Text="3"  
-                           Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="57,17,10,33" />
+                    </Grid>
+                </Viewbox>
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png" Grid.Row="1" Grid.Column="1" Margin="10,17,57,33" />
-                <Image x:Name="p1Die" Source="/Assets/MenuPreparacion/trap_icon.png"  Grid.Row="1" Grid.Column="1" Margin="20,22,67,37" />
+                <Viewbox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/archer.png"  Margin="8,22,7,10" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <TextBlock x:Name="p1Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="3"  
+                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="65,195,432,328" />
+                        <Image x:Name="p1Die" Source="/Assets/MenuPreparacion/trap_icon.png"  Margin="132,180,500,380" />
+
+                    </Grid>
+                </Viewbox>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -71,16 +107,40 @@
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/lancer.png" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="8,22,7,10" />
+                <Viewbox  Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Grid>
+                        <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png"  Grid.Row="1" Margin="57,17,10,33" />
-                <TextBlock x:Name="p2Priority" Foreground="Black" FontFamily="Aclonica" FontSize="40" Text="4"  
-                           Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="57,17,10,33" />
+                    </Grid>
+                </Viewbox>
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png" Grid.Row="1" Grid.Column="1" Margin="10,17,57,33" />
-                <Image x:Name="p2Die" Source="/Assets/MenuPreparacion/poison.png"  Grid.Row="1" Grid.Column="1" Margin="20,22,67,37" />
+                <Viewbox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/lancer.png"  Margin="8,22,7,10" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <TextBlock x:Name="p2Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="4"  
+                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
+                        <Image x:Name="p2Die" Source="/Assets/MenuPreparacion/poison.png"  Margin="181,359,624,509" />
+
+                    </Grid>
+                </Viewbox>
             </Grid>
 
             <Grid Grid.Row="2">
@@ -92,16 +152,40 @@
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/knight.png" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="8,22,7,10" />
+                <Viewbox  Grid.ColumnSpan="2" Grid.RowSpan="2">
+                    <Grid>
+                        <Image Source="/Assets/MenuPreparacion/character_square.png" Stretch="Fill" Margin="10,10,10,10" />
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png"  Grid.Row="1" Margin="57,17,10,33" />
-                <TextBlock x:Name="p3Priority" Foreground="Black" FontFamily="Aclonica" FontSize="40" Text="6"  
-                           Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="57,17,10,33" />
+                    </Grid>
+                </Viewbox>
 
-                <Image Source="/Assets/MenuPreparacion/white_square.png" Grid.Row="1" Grid.Column="1" Margin="10,17,57,33" />
-                <Image x:Name="p3Die" Source="/Assets/MenuPreparacion/sword.png"  Grid.Row="1" Grid.Column="1" Margin="20,22,67,37" />
+                <Viewbox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/knight.png"  Margin="8,22,7,10" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <TextBlock x:Name="p3Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="6"  
+                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+
+                    </Grid>
+                </Viewbox>
+
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Grid>
+
+                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
+                        <Image x:Name="p3Die" Source="/Assets/MenuPreparacion/sword.png"  Margin="181,359,624,509" />
+
+                    </Grid>
+                </Viewbox>
             </Grid>
 
         </Grid>
@@ -115,15 +199,25 @@
 
             </Grid.RowDefinitions>
 
-            <Image Source="/Assets/MenuPreparacion/throw_platform.png" Grid.ColumnSpan="2" Margin="43,0,245,10" />
-            <Button Grid.Column="0" Grid.Row="0" Margin="70,60,20,60" Background="Transparent">
-                <Image Source="/Assets/MenuPreparacion/throw.png" />
-            </Button>
+            <Viewbox Grid.Column="0" Grid.Row="0">
+                <Grid>
+                    <Image Source="/Assets/MenuPreparacion/throw_platform.png" Margin="181,10,-70,0" />
+                    <Button  Margin="70,0,0,0" Background="Transparent" Click="Throw_Click" Height="216" Width="703">
+                        <Image Source="/Assets/MenuPreparacion/throw.png" Margin="82,4,-92,-4" />
+                    </Button>
+                </Grid>
+            </Viewbox>
 
-            <Image Source="/Assets/MenuPreparacion/white_square.png"  Grid.Column="1" Margin="70,70,70,70" />
-            <TextBlock Foreground="Black" FontFamily="Aclonica" FontSize="70" Text="3"  
-                           Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70,70,70,70" />
-            <Image Source="/Assets/MenuPreparacion/reroll_icon.png"  Grid.Column="1" Margin="190,39,41,189" />
+
+            <Viewbox Grid.Column="1">
+                <Grid>
+                    <Image Source="/Assets/MenuPreparacion/white_square.png" Margin="307,577,470,577" />
+                    <TextBlock x:Name="rerollCount" Foreground="Black" FontFamily="Aclonica" FontSize="600" Text="3"  
+                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="496,738,0,0" />
+                    <Image Source="/Assets/MenuPreparacion/reroll_icon.png" Margin="893,106,239,923" />
+                </Grid>
+            </Viewbox>
+
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="2">
@@ -135,11 +229,12 @@
                 <RowDefinition Height="1.25*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Margin="-10,10,60,10" Background="Transparent" >
-                <Image Source="/Assets/MenuPreparacion/priority.png" Stretch="Fill" />
+
+            <Button Grid.Row="0" Margin="-10,10,60,10" Background="Transparent" Click="Priority_Click">
+                <Image x:Name="priorityBut" Source="/Assets/MenuPreparacion/priority_a.png" Stretch="Fill" />
             </Button>
-            <Button Grid.Row="1" Margin="-10,10,60,10" Background="Transparent">
-                <Image Source="/Assets/MenuPreparacion/action.png"  Stretch="Fill" />
+            <Button Grid.Row="1" Margin="-10,10,60,10" Background="Transparent" Click="Action_Click">
+                <Image x:Name="actionBut" Source="/Assets/MenuPreparacion/action_b.png"  Stretch="Fill" />
             </Button>
 
         </Grid>
@@ -154,44 +249,62 @@
                 <RowDefinition Height="3*" />
 
             </Grid.RowDefinitions>
-            <Rectangle Fill="LightGray" Grid.Row="0" Margin="30,10,45,10"  />
-            <TextBlock Grid.Row="0" Margin="30,10,45,10" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Run FontFamily="Aclonica" Foreground="Black" FontSize="40" >
+            <Viewbox Grid.Row="0">
+                <Grid>
+                    <Rectangle Fill="LightGray" Margin="10,5,10,5"  />
+                    <TextBlock Grid.Row="0" Margin="50,10,45,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Run FontFamily="Aclonica" Foreground="Black" FontSize="30" >
                    Info</Run>
+                    </TextBlock>
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <Grid>
 
-            </TextBlock>
-            <Rectangle Fill="Gray" Grid.Row="1" Margin="10,10,20,0"  />
-            <Image x:Name="infoIcon" Grid.Row="1" Source="/Assets/MenuPreparacion/sword.png"  Margin="25,25,25,25" />
+                    <Rectangle Fill="Gray" Margin="-404,10,-394,25"  />
+                    <Image x:Name="infoIcon"  Source="/Assets/MenuPreparacion/sword.png"  Margin="25,25,25,83" />
+                </Grid>
+            </Viewbox>
 
-            <Rectangle Fill="LightGray" Grid.Row="2" Margin="10,5,20,10"  />
-            <TextBlock x:Name="infoText" Grid.Row="2" Margin="20,26,30,0" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="20">
+
+            <Viewbox Grid.Row="2">
+                <Grid>
+                    <Rectangle Fill="LightGray" Margin="10,5,20,10"  />
+                    <TextBlock x:Name="infoText"  Margin="94,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="WrapWholeWords" Height="1898" Width="1358">
+                 <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
+                    <Span FontFamily="Aclonica" Foreground="Black" FontSize="100">
                     El <Bold>Dado de Ataque Rápido</Bold> tiene:
                 </Span>
+                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="17">
+                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
                     - <Bold>3</Bold> caras que provocan <Bold>1</Bold> <Italic>punto de daño</Italic> al enemigo
                 </Span>
+                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="17">
+                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
                     - <Bold>2</Bold> caras que provocan <Bold>2</Bold> <Italic>puntos de daño</Italic> al enemigo
                 </Span>
+                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="17">
+                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
                     - <Bold>1</Bold> cara vacía sin efecto
                 </Span>
 
-            </TextBlock>
+                    </TextBlock>
+                </Grid>
+            </Viewbox>
         </Grid>
 
-        <!--<Rectangle  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Fill="Green" Margin="66,56,46,60"  />-->
-        <Button Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Margin="30,30,30,30" Background="Transparent">
-            <Image Source="/Assets/MenuPreparacion/ready.png" />
-        </Button>
-        <Button  Grid.Row="0" Grid.Column="4" Margin="20,20,20,20" Background="Transparent">
+        <Viewbox  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3">
+            <Grid>
+                <Button Margin="30,30,30,30" Background="Transparent"
+                Click="Ready_Click">
+                    <Image Source="/Assets/MenuPreparacion/ready_a.png" />
+                </Button>
+            </Grid>
+        </Viewbox>
+        <Button  Grid.Row="0" Grid.Column="4" Margin="20,20,20,20" Background="Transparent" Click="Options_Click">
             <Image Source="/Assets/MenuPreparacion/options.png" />
         </Button>
 
