@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -22,14 +23,32 @@ namespace NecroGamble
     /// </summary>
     public sealed partial class GameMenu : Page
     {
+        Random rand = new Random();
+
         public GameMenu()
         {
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Moneda_Click(object sender, RoutedEventArgs e)
         {
-
+            int i = rand.Next(0, 2);
+            if (i == 0)
+            {
+                //if (ButtonsTarget.Text != "Tira solo uno")
+                //{
+                    Moneda.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/monedaCara.png"));
+                    ButtonsTarget.Text = "Tira solo uno";
+                //}
+            }
+            else
+            {
+                //if (ButtonsTarget.Text != "Tira ambos")
+                //{
+                    Moneda.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/monedaCruz.png"));
+                    ButtonsTarget.Text = "Tira ambos";
+                //}
+            }
         }
     }
 }

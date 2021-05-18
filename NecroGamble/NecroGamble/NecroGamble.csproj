@@ -173,7 +173,8 @@
     <Content Include="Assets\PartidaMenu\dadosCaminar.png" />
     <Content Include="Assets\PartidaMenu\dadoTrampa.png" />
     <Content Include="Assets\PartidaMenu\flecha.png" />
-    <Content Include="Assets\PartidaMenu\moneda.png" />
+    <Content Include="Assets\PartidaMenu\monedaCara.png" />
+    <Content Include="Assets\PartidaMenu\monedaCruz.png" />
     <Content Include="Assets\PartidaMenu\muerte.png" />
     <Content Include="Assets\PartidaMenu\muerteVida.png" />
     <Content Include="Assets\PartidaMenu\Pause.png" />

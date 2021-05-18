@@ -30,11 +30,11 @@
             </Grid.ColumnDefinitions>
             <Viewbox Grid.Column="0" VerticalAlignment="Center">
                 <Grid>
-                    <Button Style="{StaticResource ButtonRevealStyle}" Background="White" Foreground="Black" 
-                    FontWeight="Bold" Content="Throw" Grid.Row="2" Grid.Column="1" FontSize="40" 
+                    <Button Style="{StaticResource ButtonRevealStyle}" Background="White" Foreground="Black" FontFamily="Aclonica"
+                    FontWeight="Bold" Content="Throw" Grid.Row="2" Grid.Column="1" FontSize="50" Click="Moneda_Click"  
                     Margin="154,0,0,0"  VerticalAlignment="Center" Width="220" Height="93" />
                     <Border Background="White" Opacity="0.8" Grid.ColumnSpan="2" Margin="461,0,373,0"/>
-                    <Image Source="/Assets/PartidaMenu/moneda.png" Grid.Row="2" Grid.Column="1" Margin="461,0,373,0" Stretch="Uniform"/>
+                    <Image x:Name="Moneda" Source="/Assets/PartidaMenu/monedaCruz.png" Grid.Row="2" Grid.Column="1" Margin="461,0,373,0" Stretch="Uniform"/>
                 </Grid>
             </Viewbox>
             <Viewbox Grid.Column="1" Margin="0, 20, 0, 20" VerticalAlignment="Center">
@@ -46,7 +46,7 @@
                     <Border Background="White" Opacity="0.8" Grid.ColumnSpan="2"/>
                     <Image Source="/Assets/PartidaMenu/dadosCaminar.png" Margin="50,30,50,70" Grid.Column="0" HorizontalAlignment="Left" Stretch="Uniform"/>
                     <Image Source="/Assets/PartidaMenu/dadoTrampa.png"  Margin="50,30,50,70" Grid.Column="1" HorizontalAlignment="Right" Stretch="Uniform" />
-                    <TextBlock Foreground="Black" Grid.ColumnSpan="2" 
+                    <TextBlock x:Name="ButtonsTarget" Foreground="Black" Grid.ColumnSpan="2" 
                      VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Aclonica" FontSize="40" Text="Lanza solo uno">
                     </TextBlock>
                 </Grid>
