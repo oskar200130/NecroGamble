@@ -38,55 +38,59 @@ namespace NecroGamble
         private void ButtonPause_Click(object sender, RoutedEventArgs e)
         {
             PauseMenu.Visibility = Visibility.Visible;
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatallaBlur.png"));
+            ButtonPause.Visibility = Visibility.Collapsed;
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatallaBlur.png"));
         }
 
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
-            Continue.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
             PauseMenu.Visibility = Visibility.Collapsed;
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatalla.png"));
+            ButtonPause.Visibility = Visibility.Visible;
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
 
         }
 
         private void SaveGame_Click(object sender, RoutedEventArgs e)
         {
-            SaveGame.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
             PauseMenu.Visibility = Visibility.Collapsed;
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatalla.png"));
+            ButtonPause.Visibility = Visibility.Visible;
+
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
 
         }
 
         private void Options_Click(object sender, RoutedEventArgs e)
         {
-            Options.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
             PauseMenu.Visibility = Visibility.Collapsed;
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatalla.png"));
+            ButtonPause.Visibility = Visibility.Visible;
+
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
 
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Exit.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
             PauseMenu.Visibility = Visibility.Collapsed;
             ExitMenu.Visibility = Visibility.Visible;
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\BlurOptiones.png"));
+            ButtonPause.Visibility = Visibility.Collapsed;
+
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\BlurOptiones.png"));
         }
 
         private void NoButton_Click(object sender, RoutedEventArgs e)
         {
-            NoButton.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatalla.png"));
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
             ExitMenu.Visibility = Visibility.Collapsed;
             PauseMenu.Visibility = Visibility.Visible;
+
 
         }
 
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            YesButton.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(230, 230, 250, 255));
-            Background.Source = new BitmapImage(new Uri(@"Assets\MenuPausa\fondoBatalla.png"));
+            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
             ExitMenu.Visibility = Visibility.Collapsed;
+            ButtonPause.Visibility = Visibility.Visible;
         }
     }
 
