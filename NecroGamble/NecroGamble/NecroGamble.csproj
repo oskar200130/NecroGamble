@@ -145,7 +145,11 @@
     <Content Include="Assets\MenuPausa\BlurOptiones.png" />
     <Content Include="Assets\MenuPausa\fondoBatalla.png" />
     <Content Include="Assets\MenuPausa\fondoBatallaBlur.png" />
+    <Content Include="Assets\MenuPausa\gears.png" />
+    <Content Include="Assets\MenuPausa\logout.png" />
     <Content Include="Assets\MenuPausa\Pause.png" />
+    <Content Include="Assets\MenuPausa\play.png" />
+    <Content Include="Assets\MenuPausa\save.png" />
     <Content Include="Assets\MenuPausa\sideSplash.png" />
     <Content Include="Assets\MenuPreparacion\10dice.png" />
     <Content Include="Assets\MenuPreparacion\11dice.png" />

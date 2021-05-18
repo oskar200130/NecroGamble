@@ -25,61 +25,46 @@
         <Button x:Name="ButtonPause" Click="ButtonPause_Click"  Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image x:Name="PauseImage" Source="/Assets/MenuPausa/Pause.png" HorizontalAlignment="Center" Stretch="Uniform"/>
         </Button>
-        
-        <Grid x:Name="PauseMenu" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3" Visibility="Collapsed">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="770" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Image x:Name="SideSpash" Source="/Assets/MenuPausa/sideSplash.png" HorizontalAlignment="Center" Stretch="Fill" Grid.Row="0" Grid.Column="0" />
-            <RelativePanel Grid.Column="0" Grid.ColumnSpan="1">
-                <Button x:Name="Continue" Height="140" Width="444" Click="Continue_Click" Margin="100,150,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
-                    <StackPanel Orientation="Horizontal" Width="444">
-                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
-                        <TextBlock Text="Continue" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    </StackPanel>
-                </Button>
-                <Button x:Name="SaveGame" Height="140" Width="444" Click="SaveGame_Click" Margin="150,350,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
-                    <StackPanel Orientation="Horizontal" Width="444">
-                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
-                        <TextBlock Text="Save Game" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                    </StackPanel>
-                </Button>
-                <Button x:Name="Options" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
-                    <StackPanel Orientation="Horizontal" Width="444">
-                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
-                        <TextBlock Text="Options" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    </StackPanel>
-                </Button>
-                <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
-                    <StackPanel Orientation="Horizontal" Width="444">
-                        <Image Source="Assets/StoreLogo.png" Stretch="Uniform" HorizontalAlignment="Right"/>
-                        <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                    </StackPanel>
-                </Button>
-            </RelativePanel>
-        </Grid>
-
-        <Grid x:Name="ExitMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="Collapsed">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Rectangle Fill="MediumPurple"  Grid.Row="1" Grid.Column="1"></Rectangle>
-
-            <Grid Grid.Row="1" Grid.Column="1">
+        <Viewbox Stretch="Uniform" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3">
+            <Grid x:Name="PauseMenu"  Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image x:Name="SideSpash" Source="/Assets/MenuPausa/sideSplash.png" HorizontalAlignment="Left" Stretch="Fill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <RelativePanel Grid.Column="0" Grid.ColumnSpan="1">
+                    <Button x:Name="Continue" Height="140" Width="444" Click="Continue_Click" Margin="100,150,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/play.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                            <TextBlock Text="Continue" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="SaveGame" Height="140" Width="444" Click="SaveGame_Click" Margin="150,350,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/save.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                            <TextBlock Text="Save Game" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Options" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/gears.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Options" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/logout.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                </RelativePanel>
+            </Grid>
+        </Viewbox>
+       
+            <Grid x:Name="ExitMenu"  Visibility="Collapsed" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -91,15 +76,38 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
+                <Viewbox Stretch="UniformToFill"  Grid.Row="1" Grid.Column="1">
+                    <Rectangle Fill="MediumPurple" ></Rectangle>
+                </Viewbox>
+                
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
 
-                <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="0" Text="Are you sure?" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontStretch="Condensed"></TextBlock>
-                <Button x:Name="YesButton" Click="YesButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" 
-                        Width="auto" Margin="-50,0,0,0" Content="Yes" FontSize="45"></Button>
-                <Button x:Name="NoButton" Click="NoButton_Click" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" 
-                        Width="auto" Margin="50,0,0,0" Content="No" FontSize="45" ></Button>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Viewbox Stretch="Uniform"  Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="0">
+                        <TextBlock Grid.Row="0" Text="Are you sure?" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontStretch="Condensed"></TextBlock>
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Button x:Name="YesButton" Click="YesButton_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                 Margin="-50,0,0,0" Content="Yes" FontSize="45">
 
+                        </Button>    
+                    </Viewbox>
+                    <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Button x:Name="NoButton" Click="NoButton_Click"  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Margin="50,0,0,0" Content="No" FontSize="45" >
+
+                        </Button>
+                    </Viewbox>
+                </Grid>
             </Grid>
-            
-        </Grid>
     </Grid>
 </Page>
