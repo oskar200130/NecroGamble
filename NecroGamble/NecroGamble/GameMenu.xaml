@@ -22,17 +22,37 @@
             <RowDefinition Height="0.03*"/>
         </Grid.RowDefinitions>
         <Image Source="/Assets/PartidaMenu/backgroundPartida.jpg" Grid.ColumnSpan="4" Grid.RowSpan="4" Stretch="Fill"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Background="White" Foreground="Black" 
-                FontWeight="Bold" Content="Throw" Grid.Row="2" Grid.Column="1" FontSize="40" 
-                Margin="154,0,0,0"  VerticalAlignment="Center" Width="169" Height="63" />
-        <Rectangle Fill="White" Opacity="0.8" Grid.Row="2" Grid.Column="1" Margin="361,34,773,63"/>
-        <Image Source="/Assets/PartidaMenu/moneda.png" Grid.Row="2" Grid.Column="1" Margin="361,34,773,63"/>
-        <Rectangle Fill="White" Opacity="0.8" Grid.Row="2" Grid.Column="1" Margin="602,36,377,61"/>
-        <Image Source="/Assets/PartidaMenu/dadosCaminar.png" Grid.Row="2" Grid.Column="1" Margin="461,41,404,65"/>
-        <Image Source="/Assets/PartidaMenu/dadoTrampa.png" Grid.Row="2" Grid.Column="1" Margin="624,41,241,65"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Background="White" Foreground="Black"  
-                Content="Throw only one" Grid.Row="2" Grid.Column="1" FontSize="30" Margin="661,187,0,0" 
-                Width="225" Height="52" VerticalAlignment="Top" />
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0" VerticalAlignment="Center">
+                <Grid>
+                    <Button Style="{StaticResource ButtonRevealStyle}" Background="White" Foreground="Black" 
+                    FontWeight="Bold" Content="Throw" Grid.Row="2" Grid.Column="1" FontSize="40" 
+                    Margin="154,0,0,0"  VerticalAlignment="Center" Width="220" Height="93" />
+                    <Border Background="White" Opacity="0.8" Grid.ColumnSpan="2" Margin="461,0,373,0"/>
+                    <Image Source="/Assets/PartidaMenu/moneda.png" Grid.Row="2" Grid.Column="1" Margin="461,0,373,0" Stretch="Uniform"/>
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Margin="0, 20, 0, 20" VerticalAlignment="Center">
+                <Grid Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border Background="White" Opacity="0.8" Grid.ColumnSpan="2"/>
+                    <Image Source="/Assets/PartidaMenu/dadosCaminar.png" Margin="50,30,50,70" Grid.Column="0" HorizontalAlignment="Left" Stretch="Uniform"/>
+                    <Image Source="/Assets/PartidaMenu/dadoTrampa.png"  Margin="50,30,50,70" Grid.Column="1" HorizontalAlignment="Right" Stretch="Uniform" />
+                    <TextBlock Foreground="Black" Grid.ColumnSpan="2" 
+                     VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Aclonica" FontSize="40" Text="Lanza solo uno">
+                    </TextBlock>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
         <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.4*" />
@@ -42,11 +62,19 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Button Style="{StaticResource ButtonRevealStyle}" Background="Transparent"
-                Width="100" Height="100" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image Source="/Assets/PartidaMenu/Pause.png" Stretch="UniformToFill"/>
+                MaxWidth="100" MaxHeight="100" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Source="/Assets/PartidaMenu/Pause.png" Stretch="Uniform"/>
             </Button>
-            <ProgressBar Grid.Column="1" Width="700" Height="20" Value="80" Foreground="Red" Background="White"/>
-            <Image Source="/Assets/PartidaMenu/muerteVida.png" Grid.Column="1" Margin="67,-1,827,32"/>
+            <Viewbox  Grid.Column="1" Stretch="Fill" Margin="100,0,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    <ProgressBar Grid.Column="1" Width="600" Height="20" Value="80" Foreground="Red" Background="White"/>
+                    <Image Grid.Column="0" Source="/Assets/PartidaMenu/muerteVida.png" Stretch="Uniform" Margin="20,10,0,10" MaxHeight="100" HorizontalAlignment="Left"/>
+                </Grid>
+            </Viewbox>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1" Background="White" Opacity="0.8">
             <Grid.ColumnDefinitions>
@@ -128,32 +156,43 @@
         <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
-                <RowDefinition Height="4*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
-            <Rectangle Fill="Gray" Grid.Row="1" Height="153" VerticalAlignment="Top" Margin="23,10,10,10"/>
-            <Image Source="/Assets/PartidaMenu/arquero.png"  Grid.Row="1" VerticalAlignment="Top" Margin="90,51,77,0" Height="112" Stretch="Uniform"/>
-            <Rectangle Fill="LightGray" Grid.Row="1" Height="388" VerticalAlignment="Bottom" Margin="23,0,10,20"/>
-            <TextBlock x:Name="infoText"  Grid.Row="1" Height="381" VerticalAlignment="Top" Margin="35,173,20,0" HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="30">
-                    El <Bold>Dado de Ataque Rápido</Bold> tiene:
-                </Span>
-                <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="23">
-                     <Bold>3</Bold> caras que provocan <Bold>1</Bold> <Italic>punto de daño</Italic> al enemigo
-                </Span>
-                <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="23">
-                     <Bold>2</Bold> caras que provocan <Bold>2</Bold> <Italic>puntos de daño</Italic> al enemigo
-                </Span>
-                <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="23">
-                     <Bold>1</Bold> cara vacía sin efecto
-                </Span>
+            <Viewbox Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Grid>
+                    <Rectangle Fill="LightGray" Margin="43,0,34,0"/>
+                    <TextBlock x:Name="infoText"  Grid.Row="1" MaxHeight="600"  Height="400" VerticalAlignment="Top" Margin="60,15,40,0" 
+                        HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="40">
+                            El <Bold>Dado de Ataque Rápido</Bold> tiene:
+                        </Span>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                             <Bold>3</Bold> caras que provocan <Bold>1</Bold> <Italic>punto de daño</Italic> al enemigo
+                        </Span>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                             <Bold>2</Bold> caras que provocan <Bold>2</Bold> <Italic>puntos de daño</Italic> al enemigo
+                        </Span>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                             <Bold>1</Bold> cara vacía sin efecto
+                        </Span>
+                    </TextBlock>
+                </Grid>
+            </Viewbox>
+            <Viewbox Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Grid>
+                    <Rectangle Fill="Gray" MaxWidth="250" Margin="13,10,10,0"/>
+                    <Image Source="/Assets/PartidaMenu/arquero.png" VerticalAlignment="Bottom" 
+                   Margin="77,51,77,0" Height="80" Stretch="Uniform"/>
+                </Grid>
+            </Viewbox>
 
-            </TextBlock>
 
             <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0, 10, 0, 0">
                 <Grid.ColumnDefinitions>
@@ -167,13 +206,32 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Grid.Column="1">
-                    <Rectangle Fill="Red"/>
-                    <Image Source="/Assets/PartidaMenu/arquero.png"  VerticalAlignment="Center" Margin="10,10,10,10" />
-                </Grid>
-                <Image Source="/Assets/PartidaMenu/muerte.png" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,10,10,10" Stretch="Uniform"/>
-                <Image Source="/Assets/PartidaMenu/caballero.png" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,10,10,10" Stretch="Uniform"/>
-                <Image Source="/Assets/PartidaMenu/tercio.png" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="10,10,10,10" Stretch="Uniform"/>
+
+                <Viewbox Grid.Row="0" Grid.Column="1">
+                    <Grid>
+                        <Border Background="Red"/>
+                        <Image Source="/Assets/PartidaMenu/arquero.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
+                    </Grid>
+                </Viewbox>
+                <Viewbox Grid.Row="1" Grid.Column="1">
+                    <Grid>
+                        <Border Background="Transparent"/>
+                        <Image Source="/Assets/PartidaMenu/muerte.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
+                    </Grid>
+                </Viewbox>
+                <Viewbox Grid.Row="2" Grid.Column="1">
+                    <Grid>
+                        <Border Background="Transparent"/>
+                        <Image Source="/Assets/PartidaMenu/caballero.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
+                    </Grid>
+                </Viewbox>
+                <Viewbox Grid.Row="3" Grid.Column="1">
+                    <Grid>
+                        <Border Background="Transparent"/>
+                        <Image Source="/Assets/PartidaMenu/tercio.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
+                    </Grid>
+                </Viewbox>
+
                 <Image Source="/Assets/PartidaMenu/flecha.png" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="10,10,10,10" Stretch="Uniform"/>
             </Grid>
         </Grid>
