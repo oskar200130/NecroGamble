@@ -35,6 +35,13 @@ namespace NecroGamble
         //Options variables
         private BrightnessOverride bo = null;
 
+        Size s;
+        int volValue;
+        int soundValue;
+        int brightValue;
+        bool check;
+        string lang;
+        string resolution;
 
         public object WindowState { get; private set; }
         public object WindowStyle { get; private set; }
