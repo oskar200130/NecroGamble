@@ -269,7 +269,7 @@
                             <TextBlock Text="Save Game" VerticalAlignment="Center" HorizontalAlignment="Left" />
                         </StackPanel>
                     </Button>
-                    <Button x:Name="Options" Click="Options_Click" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                    <Button x:Name="Options" Click="Options_Click" Height="140" Width="444" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
                         <StackPanel Orientation="Horizontal" Width="444">
                             <Image Source="Assets/MenuPausa/gears.png" Stretch="Uniform" HorizontalAlignment="Left"/>
                             <TextBlock Text="Options" VerticalAlignment="Center" HorizontalAlignment="Right"/>
