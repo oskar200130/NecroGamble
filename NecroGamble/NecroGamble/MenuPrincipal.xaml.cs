@@ -27,9 +27,24 @@ namespace NecroGamble
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void NewGame_Button(object sender, RoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(MenuPreparacion));
+        }
 
+        private void LoadGame_Button(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(GameMenu));
+        }
+
+        private void Options_Button(object sender, RoutedEventArgs e)
+        {
+            //this.Frame.Navigate(typeof(GameMenu));
+        }
+
+        private void Exit (object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
         }
     }
 }
