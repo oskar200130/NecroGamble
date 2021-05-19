@@ -168,8 +168,8 @@ namespace NecroGamble
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            PauseMenu.Visibility = Visibility.Collapsed;
-            ButtonPause.Visibility = Visibility.Collapsed;
+            //PauseMenu.Visibility = Visibility.Collapsed;
+            //ButtonPause.Visibility = Visibility.Collapsed;
 
             //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\BlurOptiones.png"));
 
@@ -210,13 +210,14 @@ namespace NecroGamble
             {
                 //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
                 //ExitMenu.Visibility = Visibility.Collapsed;
-                ButtonPause.Visibility = Visibility.Visible;
+                //ButtonPause.Visibility = Visibility.Visible;
+                this.Frame.Navigate(typeof(MenuPrincipal));
             }
             else
             {
                 //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
                 //ExitMenu.Visibility = Visibility.Collapsed;
-                PauseMenu.Visibility = Visibility.Visible;
+                //PauseMenu.Visibility = Visibility.Visible;
             }
         }
     }
