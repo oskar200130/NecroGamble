@@ -175,22 +175,22 @@
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <Grid>
-                    <Rectangle Fill="LightGray" Margin="43,0,34,0"/>
-                    <TextBlock x:Name="infoText"  Grid.Row="1" MaxHeight="600"  Height="400" VerticalAlignment="Top" Margin="60,30,40,0" 
-                        HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
-                        <Span  FontFamily="Aclonica" Foreground="Black" FontSize="40">
+                    <Rectangle Fill="LightGray" Margin="47,0,23,0"/>
+                    <TextBlock x:Name="infoText" VerticalAlignment="Top" Margin="79,30,0,0" 
+                        HorizontalAlignment="Left" TextWrapping="WrapWholeWords" Height="1898" Width="2690">
+                        <Span  FontFamily="Aclonica" Foreground="Black" FontSize="90">
                            <Run x:Name="Title" Text="El Dado de Ataque Rápido tiene:"/> 
                         </Span>
                         <LineBreak/>
                         <LineBreak/>
                         <LineBreak/>
-                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="78">
                             <Run x:Name="MovementDice" 
                              Text="3 caras que provocan 1 punto de daño al enemigo"/>
                         </Span>
                         <LineBreak/>
                         <LineBreak/>
-                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="78">
                             <Run x:Name="AttackDice"  Text="2 caras que provocan 2 puntos de daño al enemigo"/>                             
                         </Span>
                         <LineBreak/>
@@ -257,7 +257,7 @@
         </Grid>
 
         <Viewbox Stretch="Uniform" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="4" StretchDirection="Both" HorizontalAlignment="Left">
-            <Grid x:Name="PauseMenu"  Visibility="Visible" HorizontalAlignment="Left">
+            <Grid x:Name="PauseMenu"  Visibility="Collapsed" HorizontalAlignment="Left">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
@@ -382,6 +382,6 @@
                 </Grid>
             </Viewbox>
         </Popup>
-        
+
     </Grid>
 </Page>

@@ -118,7 +118,7 @@ namespace NecroGamble
 
         private void DiceAcction()
         {
-            infoText.FontSize = 40;
+            infoText.FontSize = 110;
             infoText.Foreground = new SolidColorBrush(Colors.Black);
             infoText.FontFamily = new FontFamily("Aclonica");
 
@@ -133,7 +133,7 @@ namespace NecroGamble
                     TurnArrow4.Visibility = Visibility.Collapsed;
                     TurnArrow1.Visibility = Visibility.Visible;
                     infoImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/arquero.png"));
-                    infoText.Text = "CABALLERO:";
+                    infoText.Text = "KNIGHT:";
                     getText(pjValues[3], infoText);
                     break;
                 case 1:
@@ -142,7 +142,7 @@ namespace NecroGamble
                     TurnArrow1.Visibility = Visibility.Collapsed;
                     TurnArrow2.Visibility = Visibility.Visible;
                     infoImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/muerte.png"));
-                    infoText.Text = "MUERTE";
+                    infoText.Text = "ENEMY";
                     break;
                 case 2:
                     Turn2.Background = new SolidColorBrush(Colors.Transparent);
@@ -150,7 +150,7 @@ namespace NecroGamble
                     TurnArrow2.Visibility = Visibility.Collapsed;
                     TurnArrow3.Visibility = Visibility.Visible;
                     infoImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/caballero.png"));
-                    infoText.Text = "CABALLERO:";
+                    infoText.Text = "ARCHER:";
                     getText(pjValues[5], infoText);
                     break;
                 case 3:
@@ -159,7 +159,7 @@ namespace NecroGamble
                     TurnArrow3.Visibility = Visibility.Collapsed;
                     TurnArrow4.Visibility = Visibility.Visible;
                     infoImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/tercio.png"));
-                    infoText.Text = "CABALLERO:";
+                    infoText.Text = "LANCER:";
                     getText(pjValues[4], infoText);
                     break;
             }
