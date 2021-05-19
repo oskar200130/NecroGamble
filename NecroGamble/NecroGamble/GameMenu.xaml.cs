@@ -234,7 +234,19 @@ namespace NecroGamble
         {
             //PauseMenu.Visibility = Visibility.Collapsed;
             //ButtonPause.Visibility = Visibility.Visible;
+            TextBlock text = new TextBlock
+            {
+                Text = "Se ha guardado la partida.",
+                FontSize = 22
+            };
 
+            Flyout flyout = new Flyout
+            {
+                Content = text,
+                
+            };
+
+            flyout.ShowAt(Center);
 
             //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
 
