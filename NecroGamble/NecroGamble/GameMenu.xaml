@@ -44,10 +44,14 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Border Background="White" Opacity="0.8" Grid.ColumnSpan="2"/>
-                    <Image Source="/Assets/PartidaMenu/dadosCaminar.png" Margin="50,30,50,70" Grid.Column="0" HorizontalAlignment="Left" Stretch="Uniform"/>
-                    <Image Source="/Assets/PartidaMenu/dadoTrampa.png"  Margin="50,30,50,70" Grid.Column="1" HorizontalAlignment="Right" Stretch="Uniform" />
+                    <Button Style="{StaticResource ButtonRevealStyle}" Margin="50,30,50,70" Grid.Column="0" HorizontalAlignment="Left" Height="250" Width="275" Click="WalkDice_Click">
+                        <Image Source="/Assets/PartidaMenu/dadosCaminar.png"  Stretch="Fill" />
+                    </Button>
+                    <Button Style="{StaticResource ButtonRevealStyle}" Margin="50,30,50,70" Grid.Column="1" HorizontalAlignment="Left" Height="250" Width="275" Click="AttackDice_Click">
+                        <Image Source="/Assets/PartidaMenu/dadoTrampa.png"  Stretch="Fill" />
+                    </Button>
                     <TextBlock x:Name="ButtonsTarget" Foreground="Black" Grid.ColumnSpan="2" 
-                     VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Aclonica" FontSize="40" Text="Lanza solo uno">
+                     VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Aclonica" FontSize="40" Text="">
                     </TextBlock>
                 </Grid>
             </Viewbox>
@@ -61,7 +65,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button Style="{StaticResource ButtonRevealStyle}" Background="Transparent"
+            <Button x:Name="ButtonPause" Click="ButtonPause_Click" Style="{StaticResource ButtonRevealStyle}" Background="Transparent"
                 MaxWidth="100" MaxHeight="100" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Image Source="/Assets/PartidaMenu/Pause.png" Stretch="Uniform"/>
             </Button>
@@ -162,33 +166,32 @@
             <Viewbox Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <Grid>
                     <Rectangle Fill="LightGray" Margin="43,0,34,0"/>
-                    <TextBlock x:Name="infoText"  Grid.Row="1" MaxHeight="600"  Height="400" VerticalAlignment="Top" Margin="60,15,40,0" 
+                    <TextBlock x:Name="infoText"  Grid.Row="1" MaxHeight="600"  Height="400" VerticalAlignment="Top" Margin="60,30,40,0" 
                         HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
-                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="40">
-                            El <Bold>Dado de Ataque Rápido</Bold> tiene:
+                        <Span  FontFamily="Aclonica" Foreground="Black" FontSize="40">
+                           <Run x:Name="Title" Text="El Dado de Ataque Rápido tiene:"/> 
+                        </Span>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
+                            <Run x:Name="MovementDice" 
+                             Text="3 caras que provocan 1 punto de daño al enemigo"/>
                         </Span>
                         <LineBreak/>
                         <LineBreak/>
                         <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
-                             <Bold>3</Bold> caras que provocan <Bold>1</Bold> <Italic>punto de daño</Italic> al enemigo
+                            <Run x:Name="AttackDice"  Text="2 caras que provocan 2 puntos de daño al enemigo"/>                             
                         </Span>
                         <LineBreak/>
                         <LineBreak/>
-                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
-                             <Bold>2</Bold> caras que provocan <Bold>2</Bold> <Italic>puntos de daño</Italic> al enemigo
-                        </Span>
-                        <LineBreak/>
-                        <LineBreak/>
-                        <Span FontFamily="Aclonica" Foreground="Black" FontSize="28">
-                             <Bold>1</Bold> cara vacía sin efecto
-                        </Span>
                     </TextBlock>
                 </Grid>
             </Viewbox>
             <Viewbox Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                 <Grid>
                     <Rectangle Fill="Gray" MaxWidth="250" Margin="13,10,10,0"/>
-                    <Image Source="/Assets/PartidaMenu/arquero.png" VerticalAlignment="Bottom" 
+                    <Image x:Name="infoImage" Source="/Assets/PartidaMenu/arquero.png" VerticalAlignment="Bottom" 
                    Margin="77,51,77,0" Height="80" Stretch="Uniform"/>
                 </Grid>
             </Viewbox>
@@ -208,32 +211,79 @@
                 </Grid.RowDefinitions>
 
                 <Viewbox Grid.Row="0" Grid.Column="1">
-                    <Grid>
-                        <Border Background="Red"/>
+                    <Grid x:Name="Turn1">
+                        <Border x:Name="BTurn1" Background="Transparent"/>
                         <Image Source="/Assets/PartidaMenu/arquero.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
                     </Grid>
                 </Viewbox>
                 <Viewbox Grid.Row="1" Grid.Column="1">
-                    <Grid>
-                        <Border Background="Transparent"/>
+                    <Grid x:Name="Turn2">
+                        <Border x:Name="BTurn2" Background="Transparent"/>
                         <Image Source="/Assets/PartidaMenu/muerte.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
                     </Grid>
                 </Viewbox>
                 <Viewbox Grid.Row="2" Grid.Column="1">
-                    <Grid>
-                        <Border Background="Transparent"/>
+                    <Grid x:Name="Turn3">
+                        <Border x:Name="BTurn3" Background="Transparent"/>
                         <Image Source="/Assets/PartidaMenu/caballero.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
                     </Grid>
                 </Viewbox>
                 <Viewbox Grid.Row="3" Grid.Column="1">
-                    <Grid>
-                        <Border Background="Transparent"/>
+                    <Grid x:Name="Turn4">
+                        <Border x:Name="BTurn4" Background="Transparent"/>
                         <Image Source="/Assets/PartidaMenu/tercio.png"  VerticalAlignment="Center" Margin="30,30,30,30" Stretch="Uniform"/>
                     </Grid>
                 </Viewbox>
 
-                <Image Source="/Assets/PartidaMenu/flecha.png" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="10,10,10,10" Stretch="Uniform"/>
+                <Image x:Name="TurnArrow1" Source="/Assets/PartidaMenu/flecha.png" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" 
+                       Margin="10,10,10,10" Stretch="Uniform" Visibility="Visible"/>
+                <Image x:Name="TurnArrow2" Source="/Assets/PartidaMenu/flecha.png" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" 
+                       Margin="10,10,10,10" Stretch="Uniform" Visibility="Collapsed"/>
+                <Image x:Name="TurnArrow3" Source="/Assets/PartidaMenu/flecha.png" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" 
+                       Margin="10,10,10,10" Stretch="Uniform" Visibility="Collapsed"/>
+                <Image x:Name="TurnArrow4" Source="/Assets/PartidaMenu/flecha.png" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" 
+                       Margin="10,10,10,10" Stretch="Uniform" Visibility="Collapsed"/>
             </Grid>
         </Grid>
+
+        <Viewbox Stretch="Uniform" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="4" StretchDirection="Both" HorizontalAlignment="Left">
+            <Grid x:Name="PauseMenu"  Visibility="Visible" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image x:Name="SideSpash" Source="/Assets/MenuPausa/sideSplash.png" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+                <RelativePanel Grid.Column="0" Grid.ColumnSpan="1">
+                    <Button x:Name="Continue" Height="140" Width="444" Click="Continue_Click" Margin="100,150,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/play.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                            <TextBlock Text="Continue" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="SaveGame" Height="140" Width="444" Click="SaveGame_Click" Margin="150,350,0,0"  FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/save.png" Stretch="Uniform" HorizontalAlignment="Right"/>
+                            <TextBlock Text="Save Game" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Options" Height="140" Width="444" Click="Options_Click" Margin="200,550,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/gears.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Options" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
+                        <StackPanel Orientation="Horizontal" Width="444">
+                            <Image Source="Assets/MenuPausa/logout.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        </StackPanel>
+                    </Button>
+                </RelativePanel>
+            </Grid>
+        </Viewbox>
+
     </Grid>
 </Page>
