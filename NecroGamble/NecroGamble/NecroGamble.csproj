@@ -163,6 +163,7 @@
     <Content Include="Assets\MenuPreparacion\9dice.png" />
     <Content Include="Assets\MenuPreparacion\action_a.png" />
     <Content Include="Assets\MenuPreparacion\action_b.png" />
+    <Content Include="Assets\MenuPreparacion\blue_square.png" />
     <Content Include="Assets\MenuPreparacion\empty_dice.png" />
     <Content Include="Assets\MenuPreparacion\priority_a.png" />
     <Content Include="Assets\MenuPreparacion\priority_b.png" />

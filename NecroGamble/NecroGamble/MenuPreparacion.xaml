@@ -29,19 +29,22 @@
 
         <Image Source="/Assets/MenuPreparacion/dice_square.png" Stretch="Fill" Grid.Column="1" Grid.RowSpan="2" Margin="44,54,0,20" />
 
-        <Viewbox  Grid.Column="1"  Grid.Row="1">
+        <Viewbox x:Name="dice1Box" Grid.Column="1"  Grid.Row="1" CanDrag="True" DragStarting="Viewbox1_DragStarting" DragLeave="Viewbox_DragLeave">
             <Grid Width="930">
-                <Image x:Name="dice1" Source="/Assets/MenuPreparacion/empty_dice.png" Width="50" Height="50" Margin="234,154,129,284"/>
+                <Image x:Name="dice1" Source="/Assets/MenuPreparacion/empty_dice.png" Width="50" Height="50" Margin="234,154,129,284"
+                       PointerEntered="Dice1_PointerEntered" PointerExited="dice_PointerExited" />
             </Grid>
         </Viewbox>
-        <Viewbox  Grid.Column="1"  Grid.Row="1" >
+        <Viewbox x:Name="dice2Box" Grid.Column="1"  Grid.Row="1" CanDrag="True" DragStarting="Viewbox2_DragStarting" DragLeave="Viewbox_DragLeave">
             <Grid Width="930">
-                <Image x:Name="dice2" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50" Width="50"  Margin="221,398,-261,170" />
+                <Image x:Name="dice2" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50" Width="50"  Margin="221,398,-261,170"
+                       PointerEntered="Dice2_PointerEntered" PointerExited="dice_PointerExited"/>
             </Grid>
         </Viewbox>
-        <Viewbox  Grid.Column="1"  Grid.Row="1">
+        <Viewbox x:Name="dice3Box" Grid.Column="1"  Grid.Row="1" CanDrag="True" DragStarting="Viewbox3_DragStarting" DragLeave="Viewbox_DragLeave">
             <Grid Width="930">
-                <Image x:Name="dice3" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50"  Width="50" Margin="293,398,573,170"/>
+                <Image x:Name="dice3" Source="/Assets/MenuPreparacion/empty_dice.png" Height="50"  Width="50" Margin="293,398,573,170"
+                       PointerEntered="Dice3_PointerEntered" PointerExited="dice_PointerExited"/>
             </Grid>
         </Viewbox>
 
@@ -81,9 +84,9 @@
                 <Viewbox Grid.Row="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
-                        <TextBlock x:Name="p1Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="3"  
-                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+                        <Image x:Name="prioSquare1" Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <Image x:Name="p1Prio" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image1_Drop"  
+                               Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="757,373,48,495" />
 
                     </Grid>
                 </Viewbox>
@@ -91,8 +94,9 @@
                 <Viewbox Grid.Row="1" Grid.Column="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="65,195,432,328" />
-                        <Image x:Name="p1Die" Source="/Assets/MenuPreparacion/trap_icon.png"  Margin="132,180,500,380" />
+                        <Image x:Name="actSquare1" Source="/Assets/MenuPreparacion/white_square.png" Margin="-12,195,432,354" />
+                        <Image x:Name="p1Die" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image4_Drop"
+                               Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="181,359,624,509" />
 
                     </Grid>
                 </Viewbox>
@@ -126,9 +130,9 @@
                 <Viewbox Grid.Row="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
-                        <TextBlock x:Name="p2Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="4"  
-                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+                        <Image x:Name="prioSquare2" Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <Image x:Name="p2Prio" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image2_Drop"  
+                               Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="757,373,48,495" />
 
                     </Grid>
                 </Viewbox>
@@ -136,8 +140,9 @@
                 <Viewbox Grid.Row="1" Grid.Column="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
-                        <Image x:Name="p2Die" Source="/Assets/MenuPreparacion/poison.png"  Margin="181,359,624,509" />
+                        <Image x:Name="actSquare2" Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
+                        <Image x:Name="p2Die" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image5_Drop"
+                               Source="/Assets/MenuPreparacion/empty_dice.png" Margin="181,359,624,509" />
 
                     </Grid>
                 </Viewbox>
@@ -171,9 +176,9 @@
                 <Viewbox Grid.Row="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
-                        <TextBlock x:Name="p3Priority" Foreground="Black" FontFamily="Aclonica" FontSize="400" Text="6"  
-                           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="867,399,0,0" />
+                        <Image x:Name="prioSquare3" Source="/Assets/MenuPreparacion/white_square.png"   Margin="604,200,-107,323" />
+                        <Image x:Name="p3Prio" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image3_Drop"  
+                               Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="757,373,48,495" />
 
                     </Grid>
                 </Viewbox>
@@ -181,8 +186,9 @@
                 <Viewbox Grid.Row="1" Grid.Column="1">
                     <Grid>
 
-                        <Image Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
-                        <Image x:Name="p3Die" Source="/Assets/MenuPreparacion/sword.png"  Margin="181,359,624,509" />
+                        <Image x:Name="actSquare3" Source="/Assets/MenuPreparacion/white_square.png"   Margin="-12,195,432,354" />
+                        <Image x:Name="p3Die" AllowDrop="True" DragOver="Image_DragOver"  Drop="Image6_Drop"
+                               Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="181,359,624,509" />
 
                     </Grid>
                 </Viewbox>
@@ -261,36 +267,20 @@
             <Viewbox Grid.Row="1">
                 <Grid>
 
-                    <Rectangle Fill="Gray" Margin="-404,10,-394,25"  />
-                    <Image x:Name="infoIcon"  Source="/Assets/MenuPreparacion/sword.png"  Margin="25,25,25,83" />
+                    <Rectangle Fill="Gray" Margin="-390,10,-442,25"  />
+                    <Image x:Name="infoIcon"  Source="/Assets/MenuPreparacion/empty_dice.png"  Margin="25,47,25,61" />
                 </Grid>
             </Viewbox>
 
 
             <Viewbox Grid.Row="2">
                 <Grid>
-                    <Rectangle Fill="LightGray" Margin="10,5,20,10"  />
+                    <Rectangle Fill="LightGray" Margin="10,5,-46,10"  />
                     <TextBlock x:Name="infoText"  Margin="94,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="WrapWholeWords" Height="1898" Width="1358">
-                 <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
+                    <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
                     <Span FontFamily="Aclonica" Foreground="Black" FontSize="100">
-                    El <Bold>Dado de Ataque Rápido</Bold> tiene:
-                </Span>
-                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
-                    - <Bold>3</Bold> caras que provocan <Bold>1</Bold> <Italic>punto de daño</Italic> al enemigo
-                </Span>
-                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
-                    - <Bold>2</Bold> caras que provocan <Bold>2</Bold> <Italic>puntos de daño</Italic> al enemigo
-                </Span>
-                <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
-                <LineBreak/>
-                <Span FontFamily="Aclonica" Foreground="Black" FontSize="80">
-                    - <Bold>1</Bold> cara vacía sin efecto
-                </Span>
-
+                    Tira los <Bold>Dados</Bold> de <Bold>prioridad</Bold> y <Bold>acción</Bold> y equípaselos a los personajes
+                    </Span>
                     </TextBlock>
                 </Grid>
             </Viewbox>
@@ -300,13 +290,17 @@
             <Grid>
                 <Button Margin="30,30,30,30" Background="Transparent"
                 Click="Ready_Click">
-                    <Image Source="/Assets/MenuPreparacion/ready_a.png" />
+                    <Image x:Name="readyImage" Source="/Assets/MenuPreparacion/ready_a.png" />
                 </Button>
             </Grid>
         </Viewbox>
-        <Button  Grid.Row="0" Grid.Column="4" Margin="20,20,20,20" Background="Transparent" Click="Options_Click">
-            <Image Source="/Assets/MenuPreparacion/options.png" />
-        </Button>
+        <Viewbox Grid.Row="0" Grid.Column="4" >
+            <Grid>
+                <Button  Margin="20,20,20,20" Background="Transparent" Click="Options_Click">
+                    <Image Source="/Assets/MenuPreparacion/options.png" />
+                </Button>
+            </Grid>
+        </Viewbox>
 
     </Grid>
 </Page>
