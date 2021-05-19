@@ -48,7 +48,7 @@
                         <Image Source="/Assets/PartidaMenu/dadosCaminar.png"  Stretch="Fill" />
                     </Button>
                     <Button Style="{StaticResource ButtonRevealStyle}" Margin="50,30,50,70" Grid.Column="1" HorizontalAlignment="Left" Height="250" Width="275" Click="AttackDice_Click">
-                        <Image Source="/Assets/PartidaMenu/dadoTrampa.png"  Stretch="Fill" />
+                        <Image x:Name="DiceBottonIm" Source="/Assets/PartidaMenu/dadoTrampa.png"  Stretch="Fill" />
                     </Button>
                     <TextBlock x:Name="ButtonsTarget" Foreground="Black" Grid.ColumnSpan="2" 
                      VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="Aclonica" FontSize="40" Text="">
@@ -155,6 +155,16 @@
                 Fill="Black" RadiusX="1" RadiusY="1" Width="4" HorizontalAlignment="Left"/>
             <Rectangle Grid.Column="12" Grid.RowSpan="7" 
                 Fill="Black" RadiusX="1" RadiusY="1" Width="4" HorizontalAlignment="Right"/>
+
+            <Image Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Source="/Assets/PartidaMenu/arqueroFigura.png"
+                   Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-10,0,-10,20"/>
+            <Image Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Source="/Assets/PartidaMenu/caballeroFigura.png"
+                   Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-10,0,-10,20"/>
+            <Image Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" Source="/Assets/PartidaMenu/tercioFigura.png"
+                   Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-10,0,-10,20"/>
+            <Image Grid.Column="11" Grid.Row="2" Grid.RowSpan="2" Source="/Assets/PartidaMenu/muerteFigura.png"
+                   Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-10,0,-10,20"/>
+
         </Grid>
 
         <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="4">

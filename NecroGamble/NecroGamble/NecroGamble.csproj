@@ -169,12 +169,15 @@
     <Content Include="Assets\MenuPreparacion\priority_b.png" />
     <Content Include="Assets\MenuPreparacion\ready_a.png" />
     <Content Include="Assets\MenuPreparacion\ready_b.png" />
+    <Content Include="Assets\PartidaMenu\muerteFigura.png" />
+    <Content Include="Assets\PartidaMenu\arqueroFigura.png" />
     <Content Include="Assets\PartidaMenu\arquero.png" />
     <Content Include="Assets\PartidaMenu\backgroundPartida.jpg" />
     <Content Include="Assets\PartidaMenu\caballero.png" />
     <Content Include="Assets\PartidaMenu\dadosCaminar.png" />
     <Content Include="Assets\PartidaMenu\dadoTrampa.png" />
     <Content Include="Assets\PartidaMenu\flecha.png" />
+    <Content Include="Assets\PartidaMenu\caballeroFigura.png" />
     <Content Include="Assets\PartidaMenu\monedaCara.png" />
     <Content Include="Assets\PartidaMenu\monedaCruz.png" />
     <Content Include="Assets\PartidaMenu\muerte.png" />
@@ -210,6 +213,7 @@
     <Content Include="Assets\MenuPreparacion\throw_platform.png" />
     <Content Include="Assets\MenuPreparacion\trap_icon.png" />
     <Content Include="Assets\MenuPreparacion\white_square.png" />
+    <Content Include="Assets\PartidaMenu\tercioFigura.png" />
     <Content Include="Assets\white_square.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
