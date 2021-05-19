@@ -11,18 +11,18 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="170" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="170" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Image x:Name="Background" Stretch="Uniform" Height="auto" Width="auto" Source="/Assets/MenuPausa/fondoBatalla.png" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
-        
-        <Button x:Name="ButtonPause" Click="ButtonPause_Click"  Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <Button x:Name="ButtonPause" Click="ButtonPause_Click" Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image x:Name="PauseImage" Source="/Assets/MenuPausa/Pause.png" HorizontalAlignment="Center" Stretch="Uniform"/>
         </Button>
         <Viewbox Stretch="Uniform" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3">
@@ -57,57 +57,41 @@
                     <Button x:Name="Exit" Height="140" Width="444" Click="Exit_Click" Margin="250,750,0,0" FontSize="55" FontWeight="Bold" Foreground="Black" Background="BlueViolet">
                         <StackPanel Orientation="Horizontal" Width="444">
                             <Image Source="Assets/MenuPausa/logout.png" Stretch="Uniform" HorizontalAlignment="Left"/>
-                            <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            <TextBlock Text="Exit" VerticalAlignment="Center" HorizontalAlignment="Right" />
                         </StackPanel>
                     </Button>
                 </RelativePanel>
             </Grid>
         </Viewbox>
-       
-            <Grid x:Name="ExitMenu"  Visibility="Collapsed" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+        <!--<Grid x:Name="ExitMenu"  Visibility="Visible" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
 
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Viewbox Stretch="UniformToFill"  Grid.Row="1" Grid.Column="1">
-                    <Rectangle Fill="MediumPurple" ></Rectangle>
-                </Viewbox>
-                
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Viewbox Stretch="Uniform"  Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Column="0">
-                        <TextBlock Grid.Row="0" Text="Are you sure?" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="45" FontStretch="Condensed"></TextBlock>
-                    </Viewbox>
-                    <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Button x:Name="YesButton" Click="YesButton_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                 Margin="-50,0,0,0" Content="Yes" FontSize="45">
-
-                        </Button>    
-                    </Viewbox>
-                    <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
-                        <Button x:Name="NoButton" Click="NoButton_Click"  HorizontalAlignment="Center" VerticalAlignment="Center"
-                                 Margin="50,0,0,0" Content="No" FontSize="45" >
-
-                        </Button>
-                    </Viewbox>
-                </Grid>
-            </Grid>
+            <ContentDialog x:Name="DialogExit"
+                           Visibility="Collapsed"
+                           Width="auto" 
+                           Height="auto" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Grid.Row="1" Grid.Column="1"
+                           PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+                           PrimaryButtonText="Yes"
+                           CloseButtonClick="ContentDialog_CloseButtonClick"
+                           CloseButtonText="No"
+                          >
+                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TextBlock Text="Are you sure?" TextAlignment="Center" FontSize="45"
+                    TextWrapping="Wrap" />
+                </StackPanel>
+            </ContentDialog>
+        </Grid>-->
     </Grid>
 </Page>
