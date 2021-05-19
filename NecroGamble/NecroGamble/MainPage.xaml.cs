@@ -71,26 +71,55 @@ namespace NecroGamble
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             PauseMenu.Visibility = Visibility.Collapsed;
-            ExitMenu.Visibility = Visibility.Visible;
             ButtonPause.Visibility = Visibility.Collapsed;
 
             Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\BlurOptiones.png"));
+
+            DisplayConfirmationDialog();
         }
 
-        private void NoButton_Click(object sender, RoutedEventArgs e)
+        private async void DisplayConfirmationDialog()
         {
-            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
-            ExitMenu.Visibility = Visibility.Collapsed;
-            PauseMenu.Visibility = Visibility.Visible;
+            
+            TextBlock text = new TextBlock
+            {
+                Text = "Are you sure?",
+                TextAlignment = TextAlignment.Center,
+                FontSize = 45,
+                TextWrapping = TextWrapping.Wrap
+            };
+            StackPanel panel = new StackPanel
+            {
+                VerticalAlignment = VerticalAlignment.Stretch,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                
+            };
 
+            panel.Children.Insert(0, text);
 
-        }
+            ContentDialog confirmDialog = new ContentDialog
+            {
+                PrimaryButtonText = "Yes",
+                CloseButtonText = "No",
+                Content = panel
+            };
 
-        private void YesButton_Click(object sender, RoutedEventArgs e)
-        {
-            Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
-            ExitMenu.Visibility = Visibility.Collapsed;
-            ButtonPause.Visibility = Visibility.Visible;
+            ContentDialogResult result = await confirmDialog.ShowAsync();
+
+            // Delete the file if the user clicked the primary button.
+            /// Otherwise, do nothing.
+            if (result == ContentDialogResult.Primary)
+            {
+                Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+                //ExitMenu.Visibility = Visibility.Collapsed;
+                ButtonPause.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+                //ExitMenu.Visibility = Visibility.Collapsed;
+                PauseMenu.Visibility = Visibility.Visible;
+            }
         }
     }
 
