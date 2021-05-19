@@ -6,6 +6,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
+using Windows.UI.ViewManagement;
 using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Input;
@@ -44,8 +46,24 @@ namespace NecroGamble
         ImageSource draggedImage;
         Image draggedDice;
 
+
+        //Options variables
+        private BrightnessOverride bo = null;
+
+        Size s;
+        int volValue;
+        int soundValue;
+        int brightValue;
+        bool check;
+        string lang;
+        string resolution;
+
+        public object WindowState { get; private set; }
+        public object WindowStyle { get; private set; }
+
         public MenuPreparacion()
         {
+            bo = BrightnessOverride.GetForCurrentView();
             this.InitializeComponent();
         }
 
@@ -68,7 +86,7 @@ namespace NecroGamble
         }
         private void Options_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Options));
+            if (!OptionsPopUp.IsOpen) { OptionsPopUp.IsOpen = true; }
         }
 
         private void Image_DragOver(object sender, DragEventArgs e)
@@ -234,6 +252,11 @@ namespace NecroGamble
             draggedDice = dice3;
         }
 
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            // if the Popup is open, then close it 
+            if (OptionsPopUp.IsOpen) { OptionsPopUp.IsOpen = false; }
+        }
         private void Throw_Click(object sender, RoutedEventArgs e)
         {
             if (dicePriority)
@@ -309,6 +332,7 @@ namespace NecroGamble
             }
 
         }
+
         private void Action_Click(object sender, RoutedEventArgs e)
         {
             if (dicePriority)
@@ -417,6 +441,203 @@ namespace NecroGamble
                         break;
                 }
             }
+        }
+
+
+        //OPTIONS
+        private void FullScreen(object sender, RoutedEventArgs e)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            view.TryEnterFullScreenMode();
+        }
+
+        private void Resolution(object sender, RoutedEventArgs e)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            view.ExitFullScreenMode();
+        }
+
+        private void LessResolution(object sender, RoutedEventArgs e)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            if (ResolutionText.Text == "1920 x 1080")
+            {
+                ResolutionText.Text = "1280 x 720";
+                s.Height = 720;
+                s.Width = 1280;
+                view.TryResizeView(s);
+            }
+            else if (ResolutionText.Text == "1280 x 720")
+            {
+                ResolutionText.Text = "720 x 576";
+                s.Height = 576;
+                s.Width = 720;
+                view.TryResizeView(s);
+
+            }
+            else if (ResolutionText.Text == "720 x 576")
+            {
+                ResolutionText.Text = "720 x 480";
+                s.Height = 480;
+                s.Width = 720;
+                view.TryResizeView(s);
+            }
+            else if (ResolutionText.Text == "720 x 480")
+            {
+                ResolutionText.Text = "1920 x 1080";
+                s.Height = 1080;
+                s.Width = 1920;
+                view.TryResizeView(s);
+            }
+        }
+
+        private void MoreResolution(object sender, RoutedEventArgs e)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            if (ResolutionText.Text == "1920 x 1080")
+            {
+                ResolutionText.Text = "720 x 480";
+                s.Height = 480;
+                s.Width = 720;
+                view.TryResizeView(s);
+            }
+            else if (ResolutionText.Text == "1280 x 720")
+            {
+                ResolutionText.Text = "1920 x 1080";
+                s.Height = 1080;
+                s.Width = 1920;
+                view.TryResizeView(s);
+            }
+            else if (ResolutionText.Text == "720 x 576")
+            {
+                ResolutionText.Text = "1280 x 720";
+                s.Height = 720;
+                s.Width = 1280;
+                view.TryResizeView(s);
+            }
+            else if (ResolutionText.Text == "720 x 480")
+            {
+                ResolutionText.Text = "720 x 576";
+                s.Height = 576;
+                s.Width = 720;
+                view.TryResizeView(s);
+            }
+        }
+
+        private void LanguajeRight(object sender, RoutedEventArgs e)
+        {
+            if (LanguajeText.Text == "English")
+            {
+                LanguajeText.Text = "Español";
+
+            }
+            else if (LanguajeText.Text == "Español")
+            {
+                LanguajeText.Text = "French";
+
+            }
+            else if (LanguajeText.Text == "French")
+            {
+                LanguajeText.Text = "Português";
+
+            }
+            else if (LanguajeText.Text == "Português")
+            {
+                LanguajeText.Text = "Italiano";
+
+            }
+            else if (LanguajeText.Text == "Italiano")
+            {
+                LanguajeText.Text = "English";
+
+            }
+        }
+
+        private void LanguajeLeft(object sender, RoutedEventArgs e)
+        {
+            if (LanguajeText.Text == "English")
+            {
+                LanguajeText.Text = "Italiano";
+
+            }
+            else if (LanguajeText.Text == "Español")
+            {
+                LanguajeText.Text = "English";
+
+            }
+            else if (LanguajeText.Text == "French")
+            {
+                LanguajeText.Text = "Español";
+
+            }
+            else if (LanguajeText.Text == "Português")
+            {
+                LanguajeText.Text = "French";
+
+            }
+            else if (LanguajeText.Text == "Italiano")
+            {
+                LanguajeText.Text = "Português";
+
+            }
+        }
+
+        private void BrightSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            double br = BrightSlider.Value / 100;
+            bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
+            //bo.StartOverride();
+            bo.StartOverride();
+        }
+
+        private void RevertChanges(object sender, RoutedEventArgs e)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            ResolutionText.Text = "1920 x 1080";
+            s.Height = 1080;
+            s.Width = 1920;
+            view.TryResizeView(s);
+
+            LanguajeText.Text = "English";
+
+            BrightSlider.Value = 50;
+            double br = BrightSlider.Value / 100;
+            bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
+            //bo.StartOverride();
+            bo.StartOverride();
+
+            CheckB.IsChecked = true;
+            view.TryEnterFullScreenMode();
+
+            OtherSlider.Value = 50;
+            VolumeSlider.Value = 50;
+        }
+
+        private void Initialize()
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            ResolutionText.Text = "1920 x 1080";
+            s.Height = 1080;
+            s.Width = 1920;
+            view.TryResizeView(s);
+
+            LanguajeText.Text = "English";
+
+            BrightSlider.Value = 50;
+            double br = BrightSlider.Value / 100;
+            bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
+            //bo.StartOverride();
+            bo.StartOverride();
+
+            CheckB.IsChecked = true;
+            view.TryEnterFullScreenMode();
+
+            OtherSlider.Value = 50;
+            VolumeSlider.Value = 50;
         }
     }
 }

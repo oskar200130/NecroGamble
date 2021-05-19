@@ -22,7 +22,7 @@
 
         <Image x:Name="Background" Stretch="Uniform" Height="auto" Width="auto" Source="/Assets/MenuPausa/fondoBatalla.png" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
 
-        <Button x:Name="ButtonPause" Click="ButtonPause_Click" Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Button x:Name="ButtonPause" Click="Options_Click" Height="auto" Width="auto" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image x:Name="PauseImage" Source="/Assets/MenuPausa/Pause.png" HorizontalAlignment="Center" Stretch="Uniform"/>
         </Button>
         <Viewbox Stretch="Uniform" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3">
@@ -93,5 +93,93 @@
                 </StackPanel>
             </ContentDialog>
         </Grid>-->
+
+        <Popup x:Name="OptionsPopUp" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.RowSpan="3" HorizontalOffset="-300" VerticalOffset="-350">
+            <Viewbox>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="/Assets/Opciones/MenuOpciones.PNG" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="auto" Height="auto" Stretch="Fill" />
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" MaxWidth="800" MaxHeight="200"  Width="auto" Height="auto">
+                            <Button Click="LanguajeLeft" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="60" MaxHeight="35" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+                                <Image Source="/Assets/Opciones/flecha.png" />
+
+                            </Button>
+                            <TextBlock x:Name="LanguajeText" Text="English" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica" Margin="30, 0, 30, 0" MaxHeight="20" MaxWidth="200" Width="auto" Height="auto"/>
+                            <Button Click="LanguajeRight"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="60" MaxHeight="35" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+                                <Image Source="/Assets/Opciones/flechaDr.png" />
+
+                            </Button>
+                        </StackPanel>
+
+                        <Grid Grid.Column="1" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.95*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox x:Name="CheckB" Grid.Column="1" Grid.Row="2" HorizontalAlignment="left" MaxWidth="60" MaxHeight="35" Width="auto" Height="auto" Checked="FullScreen" Unchecked="Resolution"/>
+                        </Grid>
+
+
+                        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" MaxWidth="800" MaxHeight="200"  Width="auto" Height="auto">
+                            <Button Click="LessResolution" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="60" MaxHeight="35" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+                                <Image Source="/Assets/Opciones/flecha.png" />
+                            </Button>
+                            <TextBlock x:Name="ResolutionText" Text="1920 x 1080" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica" Margin="30, 0, 30, 0" MaxHeight="20" MaxWidth="200" Width="auto" Height="auto"/>
+                            <Button Click="MoreResolution" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="60" MaxHeight="35" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+                                <Image Source="/Assets/Opciones/flechaDr.png" />
+
+                            </Button>
+                        </StackPanel>
+
+                        <Button Click="RevertChanges" Grid.Row="7"  Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="250" MaxHeight="35" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Assets/Opciones/Captura.PNG" />
+                                <TextBlock Text="Revert Changes" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Grid.Row="8"  Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="175" MaxHeight="60" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True" Margin="0, 0, 0, 5" Click="Close_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Assets/MainMenu/exit.PNG" />
+                                <TextBlock Text="Exit" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Slider x:Name="VolumeSlider" AutomationProperties.Name="simple slider" Width="200" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Background="MediumPurple" Value="50"/>
+                        <Slider x:Name="OtherSlider" AutomationProperties.Name="simple slider" Width="200" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Background="MediumPurple" Value="50"/>
+                        <Slider x:Name="BrightSlider" ValueChanged="BrightSlider_ValueChanged" AutomationProperties.Name="simple slider" Width="200" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Background="MediumPurple" Value="50"/>
+
+                    </Grid>
+                </Grid>
+            </Viewbox>
+        </Popup>
     </Grid>
 </Page>
