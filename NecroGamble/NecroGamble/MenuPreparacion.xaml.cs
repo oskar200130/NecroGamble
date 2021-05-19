@@ -608,5 +608,29 @@ namespace NecroGamble
             OtherSlider.Value = 50;
             VolumeSlider.Value = 50;
         }
+
+        private void Initialize()
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            ResolutionText.Text = "1920 x 1080";
+            s.Height = 1080;
+            s.Width = 1920;
+            view.TryResizeView(s);
+
+            LanguajeText.Text = "English";
+
+            BrightSlider.Value = 50;
+            double br = BrightSlider.Value / 100;
+            bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
+            //bo.StartOverride();
+            bo.StartOverride();
+
+            CheckB.IsChecked = true;
+            view.TryEnterFullScreenMode();
+
+            OtherSlider.Value = 50;
+            VolumeSlider.Value = 50;
+        }
     }
 }
