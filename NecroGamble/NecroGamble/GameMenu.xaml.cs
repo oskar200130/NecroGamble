@@ -15,10 +15,12 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
+
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace NecroGamble
 {
+
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
@@ -127,6 +129,94 @@ namespace NecroGamble
                     infoImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/PartidaMenu/tercio.png"));
                     infoText.Text = "Muertos";
                     break;
+            }
+        }
+
+        private void ButtonPause_Click(object sender, RoutedEventArgs e)
+        {
+            PauseMenu.Visibility = Visibility.Visible;
+            ButtonPause.Visibility = Visibility.Collapsed;
+            //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatallaBlur.png"));
+        }
+
+        private void Continue_Click(object sender, RoutedEventArgs e)
+        {
+            PauseMenu.Visibility = Visibility.Collapsed;
+            ButtonPause.Visibility = Visibility.Visible;
+            //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+
+        }
+
+        private void SaveGame_Click(object sender, RoutedEventArgs e)
+        {
+            //PauseMenu.Visibility = Visibility.Collapsed;
+            //ButtonPause.Visibility = Visibility.Visible;
+
+
+            //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+
+        }
+
+        private void Options_Click(object sender, RoutedEventArgs e)
+        {
+            PauseMenu.Visibility = Visibility.Collapsed;
+            ButtonPause.Visibility = Visibility.Visible;
+
+            //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            PauseMenu.Visibility = Visibility.Collapsed;
+            ButtonPause.Visibility = Visibility.Collapsed;
+
+            //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\BlurOptiones.png"));
+
+            DisplayConfirmationDialog();
+        }
+
+        private async void DisplayConfirmationDialog()
+        {
+
+            TextBlock text = new TextBlock
+            {
+                Text = "Are you sure?",
+                TextAlignment = TextAlignment.Center,
+                FontSize = 45,
+                TextWrapping = TextWrapping.Wrap
+            };
+            StackPanel panel = new StackPanel
+            {
+                VerticalAlignment = VerticalAlignment.Stretch,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+
+            };
+
+            panel.Children.Insert(0, text);
+
+            ContentDialog confirmDialog = new ContentDialog
+            {
+                PrimaryButtonText = "Yes",
+                CloseButtonText = "No",
+                Content = panel
+            };
+
+            ContentDialogResult result = await confirmDialog.ShowAsync();
+
+            // Delete the file if the user clicked the primary button.
+            /// Otherwise, do nothing.
+            if (result == ContentDialogResult.Primary)
+            {
+                //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+                //ExitMenu.Visibility = Visibility.Collapsed;
+                ButtonPause.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
+                //ExitMenu.Visibility = Visibility.Collapsed;
+                PauseMenu.Visibility = Visibility.Visible;
             }
         }
     }
