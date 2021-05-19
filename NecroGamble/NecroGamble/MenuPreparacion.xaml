@@ -208,8 +208,8 @@
             <Viewbox Grid.Column="0" Grid.Row="0">
                 <Grid>
                     <Image Source="/Assets/MenuPreparacion/throw_platform.png" Margin="181,10,-70,0" />
-                    <Button  Margin="70,0,0,0" Background="Transparent" Click="Throw_Click" Height="216" Width="703">
-                        <Image Source="/Assets/MenuPreparacion/throw.png" Margin="82,4,-92,-4" />
+                    <Button  Margin="254,0,0,0" Background="Transparent" Click="Throw_Click" Height="216" Width="535">
+                        <Image Source="/Assets/MenuPreparacion/throw.png" Margin="-88,-2,-87,-3" />
                     </Button>
                 </Grid>
             </Viewbox>
@@ -279,7 +279,7 @@
                     <TextBlock x:Name="infoText"  Margin="94,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="WrapWholeWords" Height="1898" Width="1358">
                     <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/> <LineBreak/>
                     <Span FontFamily="Aclonica" Foreground="Black" FontSize="100">
-                    Tira los <Bold>Dados</Bold> de <Bold>prioridad</Bold> y <Bold>acción</Bold> y equípaselos a los personajes
+                        Roll the <Bold>Priority</Bold> and <Bold>Action Dice</Bold> and equip them to the characters
                     </Span>
                     </TextBlock>
                 </Grid>

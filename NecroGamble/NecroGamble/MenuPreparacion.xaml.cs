@@ -78,7 +78,7 @@ namespace NecroGamble
             e.AcceptedOperation = DataPackageOperation.Copy;
         }
 
-        private async void Image1_Drop(object sender, DragEventArgs e)
+        private void Image1_Drop(object sender, DragEventArgs e)
         {
 
             if (draggedImage != null && dicePriority)
@@ -110,7 +110,7 @@ namespace NecroGamble
             }
 
         }
-        private async void Image2_Drop(object sender, DragEventArgs e)
+        private void Image2_Drop(object sender, DragEventArgs e)
         {
 
             if (draggedImage != null && dicePriority)
@@ -142,7 +142,7 @@ namespace NecroGamble
             }
 
         }
-        private async void Image3_Drop(object sender, DragEventArgs e)
+        private void Image3_Drop(object sender, DragEventArgs e)
         {
             if (draggedImage != null && dicePriority)
             {
@@ -172,7 +172,7 @@ namespace NecroGamble
                     checkReady();
             }
         }
-        private async void Image4_Drop(object sender, DragEventArgs e)
+        private void Image4_Drop(object sender, DragEventArgs e)
         {
             if (draggedImage != null && !dicePriority)
             {
@@ -202,7 +202,7 @@ namespace NecroGamble
                     checkReady();
             }
         }
-        private async void Image5_Drop(object sender, DragEventArgs e)
+        private void Image5_Drop(object sender, DragEventArgs e)
         {
             if (draggedImage != null && !dicePriority)
             {
@@ -232,7 +232,7 @@ namespace NecroGamble
                     checkReady();
             }
         }
-        private async void Image6_Drop(object sender, DragEventArgs e)
+        private void Image6_Drop(object sender, DragEventArgs e)
         {
             if (draggedImage != null && !dicePriority)
             {
@@ -393,157 +393,33 @@ namespace NecroGamble
         {
             // Prevent most handlers along the event route from handling the same event again.
             e.Handled = true;
-
-            infoIcon.Source = dice1.Source;
-            infoText.FontSize = 90;
-            infoText.Foreground = new SolidColorBrush(Colors.Black);
-            infoText.FontFamily = new FontFamily("Aclonica");
-
-            if (dicePriority)
-            {
-                if (prioNum1 > 0 && prioNum1 < 7)
-                {
-                    infoText.Text = "\nEl personaje equipado con este dado poseerá una prioridad de " + prioNum1;
-                    prioSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    prioSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    prioSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                }
-            }
-            else
-            {
-                if (actNum1 > 6 && actNum1 < 13)
-                {
-                    actSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    actSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    actSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                }
-                switch (actNum1)
-                {
-                    case 7:
-                        infoText.Text = "\nEl Dado de Trampero tiene: \n\n" +
-                            "- 4 caras que colocan 1 trampa en la próxima casilla del enemigo (1 de daño) \n\n" +
-                            "- 1 cara que coloca 1 trampa potente en la próxima casilla del enemigo (3 de daño) \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 8:
-                        infoText.Text = "\nEl  Dado Tóxico  tiene: \n\n" +
-                            "- 4 caras que provocan 1 de daño al enemigo cada vez que se mueva durante 3 turnos \n\n" +
-                            "- 1 cara que provocan 2 de daño al enemigo cada vez que se mueva durante 2 turnos \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 9:
-                        infoText.Text = "\nEl  Dado de Ataque Rápido  tiene: \n\n" +
-                            "- 3 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 10:
-                        infoText.Text = "\nEl  Dado de Ralentí  tiene: \n\n" +
-                            "- 3 caras que restan 1 casilla al próximo movimiento del enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 11:
-                        infoText.Text = "\nEl  Dado de Ataque a Distancia  tiene: \n\n" +
-                            "- 4 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 1 cara que restan 2 casillas al próximo movimiento del enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 12:
-                        infoText.Text = "\nEl  Dado de Azaroso  tiene: \n\n" +
-                            "- 1 cara que hace 8 de daño al enemigo \n\n" +
-                            "- 5 caras vacías sin efecto";
-                        break;
-                    default:
-                        break;
-                }
-            }
+            showText(prioNum1, actNum1, dice1);
         }
         private void Dice2_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             // Prevent most handlers along the event route from handling the same event again.
             e.Handled = true;
-
-            infoIcon.Source = dice2.Source;
-            infoText.FontSize = 90;
-            infoText.Foreground = new SolidColorBrush(Colors.Black);
-            infoText.FontFamily = new FontFamily("Aclonica");
-
-            if (dicePriority)
-            {
-                if (prioNum2 > 0 && prioNum2 < 7)
-                {
-                    infoText.Text = "\nEl personaje equipado con este dado poseerá una prioridad de " + prioNum2;
-                    prioSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    prioSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    prioSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                }
-            }
-            else
-            {
-                if (actNum2 > 6 && actNum2 < 13)
-                {
-                    actSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    actSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                    actSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
-                }
-                switch (actNum2)
-                {
-                    case 7:
-                        infoText.Text = "\nEl  Dado de Trampero \b  tiene: \n\n" +
-                            "- 4 caras que colocan 1 trampa en la próxima casilla del enemigo (1 de daño) \n\n" +
-                            "- 1 cara que coloca 1 trampa potente en la próxima casilla del enemigo (3 de daño) \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 8:
-                        infoText.Text = "\nEl  Dado Tóxico  tiene: \n\n" +
-                            "- 4 caras que provocan 1 de daño al enemigo cada vez que se mueva durante 3 turnos \n\n" +
-                            "- 1 cara que provocan 2 de daño al enemigo cada vez que se mueva durante 2 turnos \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 9:
-                        infoText.Text = "\nEl  Dado de Ataque Rápido  tiene: \n\n" +
-                            "- 3 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 10:
-                        infoText.Text = "\nEl  Dado de Ralentí  tiene: \n\n" +
-                            "- 3 caras que restan 1 casilla al próximo movimiento del enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 11:
-                        infoText.Text = "\nEl  Dado de Ataque a Distancia  tiene: \n\n" +
-                            "- 4 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 1 cara que restan 2 casillas al próximo movimiento del enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
-                        break;
-                    case 12:
-                        infoText.Text = "\nEl  Dado de Azaroso  tiene: \n\n" +
-                            "- 1 cara que hace 8 de daño al enemigo \n\n" +
-                            "- 5 caras vacías sin efecto";
-                        break;
-                    default:
-                        break;
-                }
-            }
+            showText(prioNum2, actNum2, dice2);
         }
         private void Dice3_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             // Prevent most handlers along the event route from handling the same event again.
             e.Handled = true;
+            showText(prioNum3, actNum3, dice3);
 
-            infoIcon.Source = dice3.Source;
+        }
+        private void showText(int dicePrio, int diceAct, Image dice)
+        {
+            infoIcon.Source = dice.Source;
             infoText.FontSize = 90;
             infoText.Foreground = new SolidColorBrush(Colors.Black);
             infoText.FontFamily = new FontFamily("Aclonica");
 
             if (dicePriority)
             {
-                if (prioNum3 > 0 && prioNum3 < 7)
+                if (dicePrio > 0 && prioNum3 < 7)
                 {
-                    infoText.Text = "\nEl personaje equipado con este dado poseerá una prioridad de " + prioNum3;
+                    infoText.Text = "\nThe character equipped with this die will have a priority of: " + dicePrio;
                     prioSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
                     prioSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
                     prioSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
@@ -551,57 +427,53 @@ namespace NecroGamble
             }
             else
             {
-                if (actNum3 > 6 && actNum3 < 13)
+                if (diceAct > 6 && diceAct < 13)
                 {
                     actSquare1.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
                     actSquare2.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
                     actSquare3.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/blue_square.png"));
                 }
-                switch (actNum3)
+                switch (diceAct)
                 {
                     case 7:
-                        infoText.Text = "\nEl  Dado de Trampero \b  tiene: \n\n" +
-                            "- 4 caras que colocan 1 trampa en la próxima casilla del enemigo (1 de daño) \n\n" +
-                            "- 1 cara que coloca 1 trampa potente en la próxima casilla del enemigo (3 de daño) \n\n" +
-                            "- 1 cara vacía sin efecto";
+                        infoText.Text = "\nThe Trapper's Dice has: \n\n" +
+                            "- 4 faces which place 1 trap on the enemy's next square (1 damage point) \n\n" +
+                            "- 1 face which place 1 strong trap on the enemy's next square (3 damage points) \n\n" +
+                            "- 1 blank face with no effect";
                         break;
                     case 8:
-                        infoText.Text = "\nEl  Dado Tóxico  tiene: \n\n" +
-                            "- 4 caras que provocan 1 de daño al enemigo cada vez que se mueva durante 3 turnos \n\n" +
-                            "- 1 cara que provocan 2 de daño al enemigo cada vez que se mueva durante 2 turnos \n\n" +
-                            "- 1 cara vacía sin efecto";
+                        infoText.Text = "\nThe Toxic Die has: \n\n" +
+                            "- 4 faces which deal 1 damage points to the enemy everytime it moves for 3 turns \n\n" +
+                            "- 1 face which deals 2 damage points to the enemy everytime it moves for 2 turns \n\n" +
+                            "- 1 blank face with no effect";
                         break;
                     case 9:
-                        infoText.Text = "\nEl  Dado de Ataque Rápido  tiene: \n\n" +
-                            "- 3 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
+                        infoText.Text = "\nThe Fast Attack Die has: \n\n" +
+                            "- 3 faces which deal 1 damage points to the enemy \n\n" +
+                            "- 2 faces which deal 2 damage points to the enemy \n\n" +
+                            "- 1 face which deals 3 damage points to the enemy";
                         break;
                     case 10:
-                        infoText.Text = "\nEl  Dado de Ralentí  tiene: \n\n" +
-                            "- 3 caras que restan 1 casilla al próximo movimiento del enemigo \n\n" +
-                            "- 2 caras que provocan 2 puntos de daño al enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
+                        infoText.Text = "\nThe Slow Motion Die has: \n\n" +
+                            "- 3 faces which substract 1 square to the next enemy movement \n\n" +
+                            "- 1 face which substract 2 squares to the next enemy movement \n\n" +   
+                            "- 1 blank face with no effect";
                         break;
                     case 11:
-                        infoText.Text = "\nEl  Dado de Ataque a Distancia  tiene: \n\n" +
-                            "- 4 caras que provocan 1 punto de daño al enemigo \n\n" +
-                            "- 1 cara que restan 2 casillas al próximo movimiento del enemigo \n\n" +
-                            "- 1 cara vacía sin efecto";
+                        infoText.Text = "\nThe Ranged Attack Die has: \n\n" +
+                            "- 2 faces which deal 1 damage points to the enemy \n\n" +
+                            "- 3 faces which deal 2 damage points to the enemy \n\n" +
+                            "- 1 blank face with no effect";
                         break;
                     case 12:
-                        infoText.Text = "\nEl  Dado de Azaroso  tiene: \n\n" +
-                            "- 1 cara que hace 8 de daño al enemigo \n\n" +
-                            "- 5 caras vacías sin efecto";
+                        infoText.Text = "\nThe Gambler's Die has: \n\n" +
+                            "- 1 face which deals 8 damage points to the enemy \n\n" +
+                            "- 5 blank faces with no effect";
                         break;
                     default:
                         break;
                 }
             }
-        }
-        private void showText(int dice)
-        {
-
         }
     }
 }
