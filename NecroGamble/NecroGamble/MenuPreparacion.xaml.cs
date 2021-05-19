@@ -43,8 +43,6 @@ namespace NecroGamble
 
         ImageSource draggedImage;
         Image draggedDice;
-        Viewbox draggedDiceBox;
-
 
         public MenuPreparacion()
         {
@@ -66,7 +64,7 @@ namespace NecroGamble
         private void Ready_Click(object sender, RoutedEventArgs e)
         {
             if (ready)
-                this.Frame.Navigate(typeof(MainPage));
+                this.Frame.Navigate(typeof(GameMenu), pjValues);
         }
         private void Options_Click(object sender, RoutedEventArgs e)
         {
@@ -85,26 +83,11 @@ namespace NecroGamble
             {
                 p1Prio.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockPrio)
                     blockPrio = true;
                 p1Prio.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[0] = prioNum1;
-                    prioNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[0] = prioNum2;
-                    prioNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[0] = prioNum3;
-                    prioNum3 = -1;
-                }
+                setPrioPjValues(0);
                 if (!ready)
                     checkReady();
             }
@@ -117,26 +100,11 @@ namespace NecroGamble
             {
                 p2Prio.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockPrio)
                     blockPrio = true;
                 p2Prio.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[1] = prioNum1;
-                    prioNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[1] = prioNum2;
-                    prioNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[1] = prioNum3;
-                    prioNum3 = -1;
-                }
+                setPrioPjValues(1);
                 if (!ready)
                     checkReady();
             }
@@ -148,26 +116,11 @@ namespace NecroGamble
             {
                 p3Prio.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockPrio)
                     blockPrio = true;
                 p3Prio.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[2] = prioNum1;
-                    prioNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[2] = prioNum2;
-                    prioNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[2] = prioNum3;
-                    prioNum3 = -1;
-                }
+                setPrioPjValues(2);
                 if (!ready)
                     checkReady();
             }
@@ -178,26 +131,12 @@ namespace NecroGamble
             {
                 p1Die.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockAct)
                     blockAct = true;
                 p1Die.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[3] = actNum1;
-                    actNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[3] = actNum2;
-                    actNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[3] = actNum3;
-                    actNum3 = -1;
-                }
+                setActPjValues(3);
+
                 if (!ready)
                     checkReady();
             }
@@ -208,26 +147,11 @@ namespace NecroGamble
             {
                 p2Die.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockAct)
                     blockAct = true;
                 p2Die.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[4] = actNum1;
-                    actNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[4] = actNum2;
-                    actNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[4] = actNum3;
-                    actNum3 = -1;
-                }
+                setActPjValues(4);
                 if (!ready)
                     checkReady();
             }
@@ -238,31 +162,53 @@ namespace NecroGamble
             {
                 p3Die.Source = draggedImage;
                 draggedDice.Source = new BitmapImage(new Uri("ms-appx:///Assets/MenuPreparacion/empty_dice.png"));
-                //draggedDiceBox.CanDrag = false;
                 if (!blockAct)
                     blockAct = true;
                 p3Die.AllowDrop = false;
 
-                if (draggedDice == dice1)
-                {
-                    pjValues[5] = actNum1;
-                    actNum1 = -1;
-                }
-                else if (draggedDice == dice2)
-                {
-                    pjValues[5] = actNum2;
-                    actNum2 = -1;
-                }
-                else if (draggedDice == dice3)
-                {
-                    pjValues[5] = actNum3;
-                    actNum3 = -1;
-                }
+                setActPjValues(5);
+
                 if (!ready)
                     checkReady();
             }
         }
 
+        private void setActPjValues(int index)
+        {
+            if (draggedDice == dice1)
+            {
+                pjValues[index] = actNum1;
+                actNum1 = -1;
+            }
+            else if (draggedDice == dice2)
+            {
+                pjValues[index] = actNum2;
+                actNum2 = -1;
+            }
+            else if (draggedDice == dice3)
+            {
+                pjValues[index] = actNum3;
+                actNum3 = -1;
+            }
+        }
+        private void setPrioPjValues(int index)
+        {
+            if (draggedDice == dice1)
+            {
+                pjValues[index] = prioNum1;
+                prioNum1 = -1;
+            }
+            else if (draggedDice == dice2)
+            {
+                pjValues[index] = prioNum2;
+                prioNum2 = -1;
+            }
+            else if (draggedDice == dice3)
+            {
+                pjValues[index] = prioNum3;
+                prioNum3 = -1;
+            }
+        }
 
         private void Viewbox_DragLeave(object sender, DragEventArgs e)
         {
@@ -274,13 +220,11 @@ namespace NecroGamble
         {
             draggedImage = (dice1.Source);
             draggedDice = dice1;
-            draggedDiceBox = dice1Box;
         }
 
         private void Viewbox2_DragStarting(UIElement sender, DragStartingEventArgs args)
         {
             draggedImage = (dice2.Source);
-            draggedDiceBox = dice2Box;
             draggedDice = dice2;
         }
 
@@ -288,7 +232,6 @@ namespace NecroGamble
         {
             draggedImage = (dice3.Source);
             draggedDice = dice3;
-            draggedDiceBox = dice3Box;
         }
 
         private void Throw_Click(object sender, RoutedEventArgs e)
