@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using static NecroGamble.MenuPreparacion;
 
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -39,16 +40,10 @@ namespace NecroGamble
         //Options variables
         private BrightnessOverride bo = null;
 
-        Size s;
-        int volValue;
-        int soundValue;
-        int brightValue;
-        bool check;
-        string lang;
-        string resolution;
-
         public object WindowState { get; private set; }
         public object WindowStyle { get; private set; }
+
+        OptionsStr optionsStr;
 
         public GameMenu()
         {
@@ -59,8 +54,11 @@ namespace NecroGamble
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            pjValues = (int[])e.Parameter;
+            pjValues = ((OptionsStr)e.Parameter).dices;
+            Initialize((OptionsStr)e.Parameter);
             DiceAcction();
+
+            //Initialize();
 
             base.OnNavigatedTo(e);
         }
@@ -294,7 +292,7 @@ namespace NecroGamble
                 //Background.Source = new BitmapImage(new Uri(this.BaseUri, @"\Assets\MenuPausa\fondoBatalla.png"));
                 //ExitMenu.Visibility = Visibility.Collapsed;
                 //ButtonPause.Visibility = Visibility.Visible;
-                this.Frame.Navigate(typeof(MenuPrincipal));
+                this.Frame.Navigate(typeof(MenuPrincipal), optionsStr);
             }
             else
             {
@@ -309,12 +307,14 @@ namespace NecroGamble
         {
             var view = ApplicationView.GetForCurrentView();
             view.TryEnterFullScreenMode();
+            optionsStr.check = true;
         }
 
         private void Resolution(object sender, RoutedEventArgs e)
         {
             var view = ApplicationView.GetForCurrentView();
             view.ExitFullScreenMode();
+            optionsStr.check = false;
         }
 
         private void LessResolution(object sender, RoutedEventArgs e)
@@ -349,7 +349,10 @@ namespace NecroGamble
                 s.Height = 1080;
                 s.Width = 1920;
                 view.TryResizeView(s);
+                optionsStr.s = s;
             }
+            optionsStr.s = s;
+            optionsStr.resolution = ResolutionText.Text;
         }
 
         private void MoreResolution(object sender, RoutedEventArgs e)
@@ -384,6 +387,8 @@ namespace NecroGamble
                 s.Width = 720;
                 view.TryResizeView(s);
             }
+            optionsStr.s = s;
+            optionsStr.resolution = ResolutionText.Text;
         }
 
         private void LanguajeRight(object sender, RoutedEventArgs e)
@@ -413,6 +418,7 @@ namespace NecroGamble
                 LanguajeText.Text = "English";
 
             }
+            optionsStr.lang = LanguajeText.Text;
         }
 
         private void LanguajeLeft(object sender, RoutedEventArgs e)
@@ -442,6 +448,7 @@ namespace NecroGamble
                 LanguajeText.Text = "Português";
 
             }
+            optionsStr.lang = LanguajeText.Text;
         }
 
         private void BrightSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -450,6 +457,7 @@ namespace NecroGamble
             bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
             //bo.StartOverride();
             bo.StartOverride();
+            optionsStr.brightValue = (int)BrightSlider.Value;
         }
 
         private void RevertChanges(object sender, RoutedEventArgs e)
@@ -474,9 +482,17 @@ namespace NecroGamble
 
             OtherSlider.Value = 50;
             VolumeSlider.Value = 50;
+
+            optionsStr.s = s;
+            optionsStr.brightValue = 50;
+            optionsStr.check = true;
+            optionsStr.lang = LanguajeText.Text;
+            optionsStr.resolution = "1920 x 1080";
+            optionsStr.soundValue = 50;
+            optionsStr.volValue = 50;
         }
 
-        private void Initialize()
+        private void Init()
         {
             var view = ApplicationView.GetForCurrentView();
             Size s;
@@ -498,6 +514,46 @@ namespace NecroGamble
 
             OtherSlider.Value = 50;
             VolumeSlider.Value = 50;
+
+            optionsStr.s = s;
+            optionsStr.brightValue = 50;
+            optionsStr.check = true;
+            optionsStr.lang = LanguajeText.Text;
+            optionsStr.resolution = "1920 x 1080";
+            optionsStr.soundValue = 50;
+            optionsStr.volValue = 50;
+        }
+
+        private void Initialize(OptionsStr ost)
+        {
+            var view = ApplicationView.GetForCurrentView();
+            Size s;
+            ResolutionText.Text = ost.resolution;
+            s.Height = ost.s.Height;
+            s.Width = ost.s.Width;
+            view.TryResizeView(s);
+
+            LanguajeText.Text = ost.lang;
+
+            BrightSlider.Value = ost.brightValue;
+            double br = BrightSlider.Value / 100;
+            bo.SetBrightnessLevel(br, DisplayBrightnessOverrideOptions.None);
+            //bo.StartOverride();
+            bo.StartOverride();
+
+            CheckB.IsChecked = true;
+            view.TryEnterFullScreenMode();
+
+            OtherSlider.Value = ost.soundValue;
+            VolumeSlider.Value = ost.volValue;
+
+            optionsStr.s = ost.s;
+            optionsStr.brightValue = ost.brightValue;
+            optionsStr.check = ost.check;
+            optionsStr.lang = ost.lang;
+            optionsStr.resolution = ost.resolution;
+            optionsStr.soundValue = ost.soundValue;
+            optionsStr.volValue = ost.volValue;
         }
     }
 }

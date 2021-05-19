@@ -52,7 +52,7 @@
 
             </Button>
 
-            <Popup x:Name="OptionsPopUp" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.RowSpan="3" HorizontalOffset="-300" VerticalOffset="-350">
+            <Popup x:Name="OptionsPopUp" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.RowSpan="3" HorizontalOffset="-320" VerticalOffset="0">
                 <Viewbox>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -127,7 +127,7 @@
                             <Button  Grid.Row="8"  Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" MaxWidth="175" MaxHeight="60" Background="MediumPurple" Width="auto" Height="auto" IsTextScaleFactorEnabled ="True" Margin="0, 0, 0, 5" Click="Close_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Assets/MainMenu/exit.PNG" />
-                                    <TextBlock Text="Exit" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
+                                    <TextBlock Text="Close" TextWrapping="WrapWholeWords" MaxHeight="20" Width ="auto" FontStretch="Expanded" IsTextScaleFactorEnabled ="True" FontFamily="Aclonica"/>
                                 </StackPanel>
                             </Button>
 
